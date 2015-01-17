@@ -3,4 +3,9 @@
   <view id="main">
     <page>/main.jspx</page>
   </view>
+  <managed-bean id="__3">
+    <managed-bean-name id="__4">MainBean</managed-bean-name>
+    <managed-bean-class id="__1">com.oracle.anc.fmwpoc.sf.view.beans.MainBean</managed-bean-class>
+    <managed-bean-scope id="__2">backingBean</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

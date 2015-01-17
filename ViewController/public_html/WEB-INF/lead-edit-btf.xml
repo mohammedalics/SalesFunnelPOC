@@ -27,6 +27,12 @@
         <rollback/>
       </outcome>
     </task-flow-return>
+    <task-flow-call id="account-create-btf">
+      <task-flow-reference>
+        <document>/WEB-INF/account-create-btf.xml</document>
+        <id>account-create-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
     <control-flow-rule id="__6">
       <from-activity-id id="__7">leadEdit</from-activity-id>
       <control-flow-case id="__8">
@@ -36,6 +42,10 @@
       <control-flow-case id="__12">
         <from-outcome id="__13">cancel</from-outcome>
         <to-activity-id id="__11">leadEditRollback</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__16">
+        <from-outcome id="__18">createAccount</from-outcome>
+        <to-activity-id id="__17">account-create-btf</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>

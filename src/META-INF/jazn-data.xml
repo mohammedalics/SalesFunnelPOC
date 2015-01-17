@@ -78,6 +78,24 @@
             <description>com.oracle.anc.fmwpoc.sf.view.pageDefs.mainPageDef</description>
             <type-name-ref>RegionResourceType</type-name-ref>
           </resource>
+          <resource>
+            <name>/WEB-INF/lead-create-btf.xml#lead-create-btf</name>
+            <display-name>lead-create-btf(/WEB-INF)</display-name>
+            <description>/WEB-INF/lead-create-btf.xml#lead-create-btf</description>
+            <type-name-ref>TaskFlowResourceType</type-name-ref>
+          </resource>
+          <resource>
+            <name>/WEB-INF/lead-edit-btf.xml#lead-edit-btf</name>
+            <display-name>lead-edit-btf(/WEB-INF)</display-name>
+            <description>/WEB-INF/lead-edit-btf.xml#lead-edit-btf</description>
+            <type-name-ref>TaskFlowResourceType</type-name-ref>
+          </resource>
+          <resource>
+            <name>/WEB-INF/templates/sf-btf-template.xml#sf-btf-template</name>
+            <display-name>sf-btf-template(/WEB-INF/templates)</display-name>
+            <description>/WEB-INF/templates/sf-btf-template.xml#sf-btf-template</description>
+            <type-name-ref>TaskFlowResourceType</type-name-ref>
+          </resource>
         </resources>
         <permission-sets>
           <permission-set>
@@ -99,6 +117,24 @@
                 <resource-name>oracle.ui.pattern.dynamicShell.model.dynamicTabShellDefinition</resource-name>
                 <type-name-ref>RegionResourceType</type-name-ref>
                 <display-name>dynamicTabShellDefinition (oracle.ui.pattern.dynamicShell.model)</display-name>
+                <actions>view</actions>
+              </member-resource>
+              <member-resource>
+                <resource-name>/WEB-INF/lead-create-btf.xml#lead-create-btf</resource-name>
+                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                <display-name>lead-create-btf(/WEB-INF)</display-name>
+                <actions>view</actions>
+              </member-resource>
+              <member-resource>
+                <resource-name>/WEB-INF/lead-edit-btf.xml#lead-edit-btf</resource-name>
+                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                <display-name>lead-edit-btf(/WEB-INF)</display-name>
+                <actions>view</actions>
+              </member-resource>
+              <member-resource>
+                <resource-name>/WEB-INF/templates/sf-btf-template.xml#sf-btf-template</resource-name>
+                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                <display-name>sf-btf-template(/WEB-INF/templates)</display-name>
                 <actions>view</actions>
               </member-resource>
             </member-resources>

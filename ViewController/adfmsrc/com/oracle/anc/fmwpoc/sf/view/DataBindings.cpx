@@ -11,6 +11,12 @@
           usageId="com_oracle_anc_fmwpoc_sf_view_lead_create_btf_lead_create_btf_CreateInsertPageDef"/>
     <page path="/lead/leadEdit.jsff"
           usageId="com_oracle_anc_fmwpoc_sf_view_leadEditPageDef"/>
+    <page path="/accEdit.jsff"
+          usageId="com_oracle_anc_fmwpoc_sf_view_accEditPageDef"/>
+    <page path="/account/accEdit.jsff"
+          usageId="com_oracle_anc_fmwpoc_sf_view_accEditPageDef1"/>
+    <page path="/WEB-INF/account-create-btf.xml#account-create-btf@CreateInsert"
+          usageId="com_oracle_anc_fmwpoc_sf_view_account_create_btf_account_create_btf_CreateInsertPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_oracle_anc_fmwpoc_sf_view_mainPageDef"
@@ -21,6 +27,12 @@
           path="com.oracle.anc.fmwpoc.sf.view.pageDefs.lead_create_btf_lead_create_btf_CreateInsertPageDef"/>
     <page id="com_oracle_anc_fmwpoc_sf_view_leadEditPageDef"
           path="lead.leadEditPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_accEditPageDef"
+          path="com.oracle.anc.fmwpoc.sf.view.pageDefs.accEditPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_accEditPageDef1"
+          path="account.accEditPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_account_create_btf_account_create_btf_CreateInsertPageDef"
+          path="com.oracle.anc.fmwpoc.sf.view.pageDefs.account_create_btf_account_create_btf_CreateInsertPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="SalesFunnelModuleDataControl"

@@ -13,7 +13,13 @@
           <f:facet name="about"/>
           <f:facet name="navigation">
             <af:panelAccordion id="pa1" discloseMany="true">
-              <af:showDetailItem text="Leads" id="sdi1" disclosed="true"/>
+              <af:showDetailItem text="Leads" id="sdi1" disclosed="true">
+                <af:navigationPane id="np1" hint="list">
+                  <af:commandNavigationItem text="New Lead"
+                                            id="cni1"
+                                            actionListener="#{backingBeanScope.MainBean.launchLeadCreate}"/>
+                </af:navigationPane>
+              </af:showDetailItem>
               <af:showDetailItem text="Sales Intelligence" id="sdi2"
                                  disclosed="true"/>
             </af:panelAccordion>

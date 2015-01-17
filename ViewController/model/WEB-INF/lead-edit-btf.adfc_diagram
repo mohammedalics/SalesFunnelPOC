@@ -17,9 +17,9 @@
       <property
          name="y">228.89648</property>
       <property
-         name="x">313.0</property>
-      <property
          name="pageFragment">true</property>
+      <property
+         name="x">313.0</property>
    </View>
    <TaskFlowReturn
       id="TaskFlowReturn3">
@@ -70,5 +70,32 @@
          name="fromOutcome">cancel</property>
       <property
          name="sdm:polyPoints">R54,354.0,232.0459,499.0,316.59766,L50</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall7">
+      <property
+         name="taskFlowId">account-create-btf</property>
+      <property
+         name="activityId">account-create-btf</property>
+      <property
+         name="documentReference">/WEB-INF/account-create-btf.xml</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>account-create-btf&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">415.89062</property>
+      <property
+         name="x">314.56543</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="View2"
+      to="TaskFlowCall7">
+      <property
+         name="fromOutcome">createAccount</property>
+      <property
+         name="sdm:polyPoints">B50,313.0,282.5459,314.56543,361.54004,T50</property>
    </ControlFlowCase>
 </SDM>
