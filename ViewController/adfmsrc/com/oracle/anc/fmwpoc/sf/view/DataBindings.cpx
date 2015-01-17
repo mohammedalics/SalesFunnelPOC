@@ -5,9 +5,31 @@
   <pageMap>
     <page path="/main.jspx"
           usageId="com_oracle_anc_fmwpoc_sf_view_mainPageDef"/>
+    <page path="/templates/sFfragmentTemplate.jspx"
+          usageId="com_oracle_anc_fmwpoc_sf_view_sFfragmentTemplatePageDef"/>
+    <page path="/WEB-INF/lead-create-btf.xml#lead-create-btf@CreateInsert"
+          usageId="com_oracle_anc_fmwpoc_sf_view_lead_create_btf_lead_create_btf_CreateInsertPageDef"/>
+    <page path="/lead/leadEdit.jsff"
+          usageId="com_oracle_anc_fmwpoc_sf_view_leadEditPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_oracle_anc_fmwpoc_sf_view_mainPageDef"
           path="com.oracle.anc.fmwpoc.sf.view.pageDefs.mainPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_sFfragmentTemplatePageDef"
+          path="templates.sFfragmentTemplatePageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_lead_create_btf_lead_create_btf_CreateInsertPageDef"
+          path="com.oracle.anc.fmwpoc.sf.view.pageDefs.lead_create_btf_lead_create_btf_CreateInsertPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_leadEditPageDef"
+          path="lead.leadEditPageDef"/>
   </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="SalesFunnelModuleDataControl"
+                     Package="com.oracle.anc.fmwpoc.sf.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="SalesFunnelModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
 </Application>

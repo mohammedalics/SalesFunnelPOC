@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="lead-edit-btf">
+    <template-reference>
+      <document id="__2">/WEB-INF/templates/sf-btf-template.xml</document>
+      <id id="__1">sf-btf-template</id>
+    </template-reference>
+    <default-activity id="__3">leadEdit</default-activity>
+    <transaction id="__14">
+      <requires-transaction/>
+    </transaction>
+    <data-control-scope id="__15">
+      <shared/>
+    </data-control-scope>
+    <view id="leadEdit">
+      <page>/lead/leadEdit.jsff</page>
+    </view>
+    <task-flow-return id="leadEditCommit">
+      <outcome id="__4">
+        <name>leadEditCommit</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="leadEditRollback">
+      <outcome id="__5">
+        <name>leadEditRollback</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__6">
+      <from-activity-id id="__7">leadEdit</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome id="__10">save</from-outcome>
+        <to-activity-id id="__9">leadEditCommit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__12">
+        <from-outcome id="__13">cancel</from-outcome>
+        <to-activity-id id="__11">leadEditRollback</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

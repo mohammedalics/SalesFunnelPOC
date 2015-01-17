@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:pageTemplate viewId="/templates/sFfragmentTemplate.jspx"
+                   value="#{bindings.pageTemplateBinding}" id="pt1">
+    <f:facet name="toolbar">
+      <af:group id="g1">
+        <af:commandToolbarButton text="Save" id="ctb1" action="save"/>
+        <af:commandToolbarButton text="Cancel" id="ctb2" action="cancel"
+                                 immediate="true"/>
+      </af:group>
+    </f:facet>
+    <f:facet name="content">
+      <af:panelSplitter id="ps1" orientation="vertical"
+                        inlineStyle="width:748px;">
+        <f:facet name="first">
+          <af:panelFormLayout id="pfl1">
+            <af:inputText value="#{bindings.OppTitle.inputValue}"
+                          label="#{bindings.OppTitle.hints.label}"
+                          required="#{bindings.OppTitle.hints.mandatory}"
+                          columns="#{bindings.OppTitle.hints.displayWidth}"
+                          maximumLength="#{bindings.OppTitle.hints.precision}"
+                          shortDesc="#{bindings.OppTitle.hints.tooltip}"
+                          id="it2" contentStyle="width:230px;">
+              <f:validator binding="#{bindings.OppTitle.validator}"/>
+            </af:inputText>
+            <af:inputComboboxListOfValues id="accNameId"
+                                          popupTitle="Search and Select: #{bindings.AccName.hints.label}"
+                                          value="#{bindings.AccName.inputValue}"
+                                          label="#{bindings.AccName.hints.label}"
+                                          model="#{bindings.AccName.listOfValuesModel}"
+                                          required="#{bindings.AccName.hints.mandatory}"
+                                          columns="#{bindings.AccName.hints.displayWidth}"
+                                          shortDesc="#{bindings.AccName.hints.tooltip}"
+                                          contentStyle="width:230px;">
+              <f:validator binding="#{bindings.AccName.validator}"/>
+            </af:inputComboboxListOfValues>
+            <af:inputComboboxListOfValues id="cntNameId"
+                                          popupTitle="Search and Select: #{bindings.CntName.hints.label}"
+                                          value="#{bindings.CntName.inputValue}"
+                                          label="#{bindings.CntName.hints.label}"
+                                          model="#{bindings.CntName.listOfValuesModel}"
+                                          required="#{bindings.CntName.hints.mandatory}"
+                                          columns="#{bindings.CntName.hints.displayWidth}"
+                                          shortDesc="#{bindings.CntName.hints.tooltip}"
+                                          contentStyle="width:230px;">
+              <f:validator binding="#{bindings.CntName.validator}"/>
+            </af:inputComboboxListOfValues>
+            <af:inputText value="#{bindings.OppEstimatedAmount.inputValue}"
+                          label="#{bindings.OppEstimatedAmount.hints.label}"
+                          required="#{bindings.OppEstimatedAmount.hints.mandatory}"
+                          columns="#{bindings.OppEstimatedAmount.hints.displayWidth}"
+                          maximumLength="#{bindings.OppEstimatedAmount.hints.precision}"
+                          shortDesc="#{bindings.OppEstimatedAmount.hints.tooltip}"
+                          id="it1" contentStyle="width:230px;">
+              <f:validator binding="#{bindings.OppEstimatedAmount.validator}"/>
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.OppEstimatedAmount.format}"/>
+            </af:inputText>
+            <af:inputDate value="#{bindings.ExpectedCloseDate.inputValue}"
+                          label="#{bindings.ExpectedCloseDate.hints.label}"
+                          required="#{bindings.ExpectedCloseDate.hints.mandatory}"
+                          shortDesc="#{bindings.ExpectedCloseDate.hints.tooltip}"
+                          id="id2" contentStyle="width:230px;">
+              <f:validator binding="#{bindings.ExpectedCloseDate.validator}"/>
+              <af:convertDateTime pattern="#{bindings.ExpectedCloseDate.format}"/>
+            </af:inputDate>
+            <af:inputDate value="#{bindings.CloseDate.inputValue}"
+                          label="#{bindings.CloseDate.hints.label}"
+                          required="#{bindings.CloseDate.hints.mandatory}"
+                          shortDesc="#{bindings.CloseDate.hints.tooltip}"
+                          id="id1" contentStyle="width:230px;">
+              <f:validator binding="#{bindings.CloseDate.validator}"/>
+              <af:convertDateTime pattern="#{bindings.CloseDate.format}"/>
+            </af:inputDate>
+            <af:inputNumberSlider value="#{bindings.OppProbability.inputValue}"
+                                  label="#{bindings.OppProbability.hints.label}"
+                                  required="#{bindings.OppProbability.hints.mandatory}"
+                                  shortDesc="#{bindings.OppProbability.hints.tooltip}"
+                                  id="it3" maximum="100" minimumIncrement="5"
+                                  majorIncrement="10"
+                                  contentStyle="width:230px;">
+              <f:validator binding="#{bindings.OppProbability.validator}"/>
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.OppProbability.format}"/>
+            </af:inputNumberSlider>
+          </af:panelFormLayout>
+        </f:facet>
+        <f:facet name="second">
+          <af:panelTabbed id="pt2">
+            <af:showDetailItem text="Description" id="sdi1"
+                               stretchChildren="first">
+              <af:richTextEditor value="#{bindings.OppDescription.inputValue}"
+                                 label="#{bindings.OppDescription.hints.label}"
+                                 required="#{bindings.OppDescription.hints.mandatory}"
+                                 columns="200"
+                                 shortDesc="#{bindings.OppDescription.hints.tooltip}"
+                                 id="it4" contentStyle="width:230px;"
+                                 rows="20"/>
+            </af:showDetailItem>
+          </af:panelTabbed>
+        </f:facet>
+      </af:panelSplitter>
+    </f:facet>
+    <f:attribute name="pageTitle" value="Lead"/>
+  </af:pageTemplate>
+</jsp:root>

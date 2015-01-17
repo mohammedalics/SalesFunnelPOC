@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:decorativeBox id="pt_db1" theme="medium">
+      <f:facet name="center">
+        <af:panelGroupLayout layout="scroll"
+                             xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                             id="pt_pgl1">
+          <af:panelHeader text="#{attrs.pageTitle}" id="pt_ph1">
+            <f:facet name="context"/>
+            <f:facet name="menuBar"/>
+            <f:facet name="toolbar">
+              <af:group id="pt_g1">
+                <af:facetRef facetName="toolbar"/>
+                <af:toolbar id="pt_t1"/>
+              </af:group>
+            </f:facet>
+            <f:facet name="legend"/>
+            <f:facet name="info"/>
+            <af:facetRef facetName="content"/>
+          </af:panelHeader>
+        </af:panelGroupLayout>
+      </f:facet>
+      <f:facet name="top"/>
+    </af:decorativeBox>
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>sFfragmentTemplate</display-name>
+        <facet>
+          <facet-name>toolbar</facet-name>
+        </facet>
+        <facet>
+          <facet-name>content</facet-name>
+        </facet>
+        <attribute>
+          <attribute-name>pageTitle</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+        </attribute>
+      </component>
+    </af:xmlContent>
+  </af:pageTemplateDef>
+</jsp:root>

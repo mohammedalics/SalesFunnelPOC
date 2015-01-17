@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="leadEditPageDef" Package="lead">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="templates.sFfragmentTemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="OpportunitiesView1" RangeSize="25"
+              DataControl="SalesFunnelModuleDataControl"
+              id="OpportunitiesView1Iterator"/>
+  </executables>
+  <bindings>
+    <listOfValues StaticList="false" IterBinding="OpportunitiesView1Iterator"
+                  Uses="LOV_AccName" id="AccName"/>
+    <listOfValues StaticList="false" IterBinding="OpportunitiesView1Iterator"
+                  Uses="LOV_CntName" id="CntName"/>
+    <attributeValues IterBinding="OpportunitiesView1Iterator" id="OppTitle">
+      <AttrNames>
+        <Item Value="OppTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OpportunitiesView1Iterator"
+                     id="OppEstimatedAmount">
+      <AttrNames>
+        <Item Value="OppEstimatedAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OpportunitiesView1Iterator"
+                     id="ExpectedCloseDate">
+      <AttrNames>
+        <Item Value="ExpectedCloseDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OpportunitiesView1Iterator" id="CloseDate">
+      <AttrNames>
+        <Item Value="CloseDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OpportunitiesView1Iterator"
+                     id="OppProbability">
+      <AttrNames>
+        <Item Value="OppProbability"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OpportunitiesView1Iterator"
+                     id="OppDescription">
+      <AttrNames>
+        <Item Value="OppDescription"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

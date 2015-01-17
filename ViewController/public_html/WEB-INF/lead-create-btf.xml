@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="lead-create-btf">
+    <template-reference>
+      <document id="__1">/WEB-INF/templates/sf-btf-template.xml</document>
+      <id id="__2">sf-btf-template</id>
+    </template-reference>
+    <default-activity id="__3">CreateInsert</default-activity>
+    <transaction id="__20">
+      <new-transaction/>
+    </transaction>
+    <data-control-scope id="__21">
+      <shared/>
+    </data-control-scope>
+    <method-call id="CreateInsert">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome id="__4">
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-call id="lead-edit-btf">
+      <task-flow-reference>
+        <document>/WEB-INF/lead-edit-btf.xml</document>
+        <id>lead-edit-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-return id="leadCreatCommit">
+      <outcome id="__10">
+        <name>leadCreatCommit</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="leadCreateRollback">
+      <outcome id="__11">
+        <name>leadCreateRollback</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__5">
+      <from-activity-id id="__6">CreateInsert</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome id="__8">CreateInsert</from-outcome>
+        <to-activity-id id="__7">lead-edit-btf</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__12">
+      <from-activity-id id="__13">lead-edit-btf</from-activity-id>
+      <control-flow-case id="__15">
+        <from-outcome id="__16">leadEditCommit</from-outcome>
+        <to-activity-id id="__14">leadCreatCommit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__17">
+        <from-outcome id="__19">leadEditCommit</from-outcome>
+        <to-activity-id id="__18">leadCreateRollback</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
