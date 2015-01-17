@@ -1,0 +1,127 @@
+<?xml version = '1.0' encoding = 'UTF-8' standalone = 'yes'?>
+<jazn-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/jazn-data-11_0.xsd">
+  <jazn-realm default="jazn.com">
+    <realm>
+      <name>jazn.com</name>
+      <users/>
+      <roles>
+        <role>
+          <name>employees</name>
+        </role>
+        <role>
+          <name>managers</name>
+        </role>
+      </roles>
+    </realm>
+  </jazn-realm>
+  <policy-store>
+    <applications>
+      <application>
+        <name>SalesFunnelPOC</name>
+        <app-roles>
+          <app-role>
+            <name>sf-employees</name>
+            <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+            <members>
+              <member>
+                <name>employees</name>
+                <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
+              </member>
+            </members>
+          </app-role>
+          <app-role>
+            <name>sf-managers</name>
+            <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+            <members>
+              <member>
+                <name>managers</name>
+                <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
+              </member>
+            </members>
+          </app-role>
+        </app-roles>
+        <resource-types>
+          <resource-type>
+            <name>TaskFlowResourceType</name>
+            <display-name>Task Flow</display-name>
+            <description>Task Flow resource type</description>
+            <matcher-class>oracle.adf.controller.security.TaskFlowPermission</matcher-class>
+            <actions-delimiter>,</actions-delimiter>
+            <actions>view,customize,grant,personalize</actions>
+          </resource-type>
+          <resource-type>
+            <name>RegionResourceType</name>
+            <display-name>Web Page</display-name>
+            <description>Region resource type</description>
+            <matcher-class>oracle.adf.share.security.authorization.RegionPermission</matcher-class>
+            <actions-delimiter>,</actions-delimiter>
+            <actions>view,customize,grant,personalize</actions>
+          </resource-type>
+        </resource-types>
+        <resources>
+          <resource>
+            <name>/WEB-INF/oracle/ui/pattern/dynamicShell/infra/blank.xml#blank</name>
+            <display-name>blank(/WEB-INF/oracle/ui/pattern/dynamicShell/infra)</display-name>
+            <description>/WEB-INF/oracle/ui/pattern/dynamicShell/infra/blank.xml#blank</description>
+            <type-name-ref>TaskFlowResourceType</type-name-ref>
+          </resource>
+          <resource>
+            <name>oracle.ui.pattern.dynamicShell.model.dynamicTabShellDefinition</name>
+            <display-name>dynamicTabShellDefinition (oracle.ui.pattern.dynamicShell.model)</display-name>
+            <description>oracle.ui.pattern.dynamicShell.model.dynamicTabShellDefinition</description>
+            <type-name-ref>RegionResourceType</type-name-ref>
+          </resource>
+          <resource>
+            <name>com.oracle.anc.fmwpoc.sf.view.pageDefs.mainPageDef</name>
+            <display-name>main (com.oracle.anc.fmwpoc.sf.view.pageDefs)</display-name>
+            <description>com.oracle.anc.fmwpoc.sf.view.pageDefs.mainPageDef</description>
+            <type-name-ref>RegionResourceType</type-name-ref>
+          </resource>
+        </resources>
+        <permission-sets>
+          <permission-set>
+            <name>emp</name>
+            <member-resources>
+              <member-resource>
+                <resource-name>/WEB-INF/oracle/ui/pattern/dynamicShell/infra/blank.xml#blank</resource-name>
+                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                <display-name>blank(/WEB-INF/oracle/ui/pattern/dynamicShell/infra)</display-name>
+                <actions>view</actions>
+              </member-resource>
+              <member-resource>
+                <resource-name>com.oracle.anc.fmwpoc.sf.view.pageDefs.mainPageDef</resource-name>
+                <type-name-ref>RegionResourceType</type-name-ref>
+                <display-name>main (com.oracle.anc.fmwpoc.sf.view.pageDefs)</display-name>
+                <actions>view</actions>
+              </member-resource>
+              <member-resource>
+                <resource-name>oracle.ui.pattern.dynamicShell.model.dynamicTabShellDefinition</resource-name>
+                <type-name-ref>RegionResourceType</type-name-ref>
+                <display-name>dynamicTabShellDefinition (oracle.ui.pattern.dynamicShell.model)</display-name>
+                <actions>view</actions>
+              </member-resource>
+            </member-resources>
+          </permission-set>
+        </permission-sets>
+        <jazn-policy>
+          <grant>
+            <grantee>
+              <principals>
+                <principal>
+                  <name>sf-employees</name>
+                  <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                </principal>
+              </principals>
+            </grantee>
+            <permission-set-refs>
+              <permission-set-ref>
+                <name>emp</name>
+              </permission-set-ref>
+            </permission-set-refs>
+          </grant>
+        </jazn-policy>
+      </application>
+    </applications>
+  </policy-store>
+</jazn-data>

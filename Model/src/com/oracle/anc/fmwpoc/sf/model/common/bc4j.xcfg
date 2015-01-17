@@ -1,0 +1,25 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.oracle.anc.fmwpoc.sf.model.SalesFunnelModule">
+      <AppModuleConfig name="SalesFunnelModuleLocal" ApplicationName="com.oracle.anc.fmwpoc.sf.model.SalesFunnelModule" DeployPlatform="LOCAL" jbo.project="com.oracle.anc.fmwpoc.sf.model.Model">
+         <Security AppModuleJndiName="com.oracle.anc.fmwpoc.sf.model.SalesFunnelModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/sfDS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="SalesFunnelModuleShared" ApplicationName="com.oracle.anc.fmwpoc.sf.model.SalesFunnelModule" DeployPlatform="LOCAL" jbo.project="com.oracle.anc.fmwpoc.sf.model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="com.oracle.anc.fmwpoc.sf.model.SalesFunnelModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/sfDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <AppModuleConfigBag ApplicationName="com.oracle.anc.fmwpoc.sf.model.LovModule">
+      <AppModuleConfig name="LovModuleLocal" ApplicationName="com.oracle.anc.fmwpoc.sf.model.LovModule" DeployPlatform="LOCAL" jbo.project="com.oracle.anc.fmwpoc.sf.model.Model">
+         <Security AppModuleJndiName="com.oracle.anc.fmwpoc.sf.model.LovModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/sfDS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="LovModuleShared" ApplicationName="com.oracle.anc.fmwpoc.sf.model.LovModule" DeployPlatform="LOCAL" jbo.project="com.oracle.anc.fmwpoc.sf.model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="com.oracle.anc.fmwpoc.sf.model.LovModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/sfDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

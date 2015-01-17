@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Accounts"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="ACCOUNTS"
+  AliasName="Accounts"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="AccId"
+    IsNotNull="true"
+    ColumnName="ACC_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ACCOUNTS"
+    PrimaryKey="true"
+    IsUpdateable="while_insert">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+    <TransientExpression><![CDATA[(new oracle.jbo.server.SequenceImpl("SF_SEQ", object.getDBTransaction())).getSequenceNumber()]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AccName"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="255"
+    ColumnName="ACC_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <LABEL
+          ResId="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AccAddress1"
+    Precision="255"
+    ColumnName="ACC_ADDRESS1"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <LABEL
+          ResId="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccAddress1_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AccAddress2"
+    Precision="255"
+    ColumnName="ACC_ADDRESS2"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <LABEL
+          ResId="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccAddress2_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AccZip"
+    Precision="50"
+    ColumnName="ACC_ZIP"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <LABEL
+          ResId="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccZip_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AccCity"
+    Precision="255"
+    ColumnName="ACC_CITY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <LABEL
+          ResId="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccCity_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AccCountry"
+    Precision="255"
+    ColumnName="ACC_COUNTRY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <LABEL
+          ResId="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccCountry_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AccVatid"
+    Precision="50"
+    ColumnName="ACC_VATID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <LABEL
+          ResId="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccVatid_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AccTwitter"
+    Precision="50"
+    ColumnName="ACC_TWITTER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <LABEL
+          ResId="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccTwitter_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AccFacebook"
+    Precision="50"
+    ColumnName="ACC_FACEBOOK"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <LABEL
+          ResId="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccFacebook_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AccWww"
+    Precision="255"
+    ColumnName="ACC_WWW"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <LABEL
+          ResId="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccWww_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AccForumId"
+    Precision="255"
+    ColumnName="ACC_FORUM_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <LABEL
+          ResId="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccForumId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="AccStockSymbol"
+    Precision="20"
+    ColumnName="ACC_STOCK_SYMBOL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <LABEL
+          ResId="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccStockSymbol_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="Contacts"
+    Association="com.oracle.anc.fmwpoc.sf.model.entities.ContactsAccountsFk1Assoc"
+    AssociationEnd="com.oracle.anc.fmwpoc.sf.model.entities.ContactsAccountsFk1Assoc.Contacts"
+    AssociationOtherEnd="com.oracle.anc.fmwpoc.sf.model.entities.ContactsAccountsFk1Assoc.Accounts"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Opportunities"
+    Association="com.oracle.anc.fmwpoc.sf.model.entities.OppAccFk1Assoc"
+    AssociationEnd="com.oracle.anc.fmwpoc.sf.model.entities.OppAccFk1Assoc.Opportunities"
+    AssociationOtherEnd="com.oracle.anc.fmwpoc.sf.model.entities.OppAccFk1Assoc.Accounts"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="AccountsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ACCOUNTS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AccountsUk1">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ACCOUNTS_UK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008167">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008167"/>
+      <Attr Name="_checkCondition" Value='"ACC_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008168">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008168"/>
+      <Attr Name="_checkCondition" Value='"ACC_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccName"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.oracle.anc.fmwpoc.sf.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

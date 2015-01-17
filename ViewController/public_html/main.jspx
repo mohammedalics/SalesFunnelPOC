@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/oracle/ui/pattern/dynamicShell/dynamicTabShell.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="copyright"/>
+          <f:facet name="about"/>
+          <f:facet name="navigation">
+            <af:panelAccordion id="pa1" discloseMany="true">
+              <af:showDetailItem text="Leads" id="sdi1" disclosed="true"/>
+              <af:showDetailItem text="Sales Intelligence" id="sdi2"
+                                 disclosed="true"/>
+            </af:panelAccordion>
+          </f:facet>
+          <f:facet name="globalLinks">
+            <af:goLink text="Logout" id="gl1"
+                       destination="adfAuthentication?logout=true&amp;end_url=/faces/main"/>
+          </f:facet>
+          <f:facet name="status"/>
+          <f:facet name="globalToolbar"/>
+          <f:facet name="globalSearch"/>
+          <f:facet name="globalTabs"/>
+          <f:facet name="welcome"/>
+          <f:facet name="innerToolbar"/>
+          <f:attribute name="brandingTitle" value="Sales Funnel POC"/>
+          <f:attribute name="globalAreaSplitterPosition" value="-25"/>
+          <f:attribute name="legalAreaPosition" value="0"/>
+          <f:attribute name="navSplitterPosition" value="150"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

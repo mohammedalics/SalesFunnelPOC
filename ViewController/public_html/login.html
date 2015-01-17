@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+            <meta http-equiv="Content-Type"
+                  content="text/html; charset=iso-8859-1"/>
+            <title>Login Box HTML Code - www.PSDGraphics.com</title>
+            <link href="css/login.css" rel="stylesheet" type="text/css"/>
+            <script type="text/javascript">
+images/login-box-backg.
+              function submitenter(myfield, e) {
+                  var keycode;
+                  if (window.event)
+                      keycodimages/login-boxcss/login.css-backg.e = window.event.keyCode;
+                  else if (e)
+                      keycode = e.which;
+                  else 
+                      return true;
+
+                  if (keycode == 13) {
+                      myfield.form.submit();
+                      return false;
+                  }
+                  else 
+                      return true;
+              }
+</script>
+      </head>
+      <body>
+            <form method="POST" action="j_security_check">
+                  <div style="padding: 100px 0 0 250px;">
+                        <div id="login-box">
+                              <h2>Login</h2>
+                               Welcome to ADF Sales Funnel Demo 
+                              <br/>
+                               
+                              <br/>
+                              <div id="login-box-name" style="margin-top:20px;">Username:</div>
+                              <div id="login-box-field"
+                                   style="margin-top:20px;">
+                                    <input name="j_username" class="form-login"
+                                           title="Username" value="" size="30"
+                                           maxlength="2048"
+                                           onkeypress="return submitenter(this,event)"/>
+                              </div>
+                              <div id="login-box-name">Password:</div>
+                              <div id="login-box-field">
+                                    <input name="j_password" type="password"
+                                           class="form-login" title="Password"
+                                           value="" size="30" maxlength="2048"
+                                           onkeypress="return submitenter(this,event)"/>
+                              </div>
+                              <br/>
+                               
+                              <br/>
+                               
+                              <a href="javascript:document.forms[0].submit();"> 
+                                    <img src="images/login-btn.png" width="103"
+                                         height="42" style="margin-left:90px;"/></a>
+                        </div>
+                  </div>
+            </form>
+      </body>
+</html>

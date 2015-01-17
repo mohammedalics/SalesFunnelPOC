@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LovModule"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  ClearCacheOnRollback="true">
+  <DesignTime>
+    <Attr Name="_deployType" Value="0"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.oracle.anc.fmwpoc.sf.model.LovModule_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewUsage
+    Name="AccountsLovView1"
+    ViewObjectName="com.oracle.anc.fmwpoc.sf.model.views.lov.AccountsLovView"/>
+  <ViewUsage
+    Name="ContactsLovView1"
+    ViewObjectName="com.oracle.anc.fmwpoc.sf.model.views.lov.ContactsLovView"/>
+  <ViewUsage
+    Name="EmployeesLovView1"
+    ViewObjectName="com.oracle.anc.fmwpoc.sf.model.views.lov.EmployeesLovView"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.oracle.anc.fmwpoc.sf.model.ModelBundle"/>
+  </ResourceBundle>
+</AppModule>

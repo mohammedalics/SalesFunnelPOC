@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeesView"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  SelectList="Employees.EMP_ID, 
+       Employees.EMP_NAME, 
+       Employees.EMP_JOB_TITLE, 
+       Employees.MANAGER_ID, 
+       Employees.EMP_EMAIL, 
+       Employees.EMP_PHONE, 
+       Employees.EMP_YEARLY_TARGET_AMOUNT, 
+       Employees.EMP_PHOTO, 
+       Employees.USERNAME, 
+       Employees.PASSWORD"
+  FromList="EMPLOYEES Employees"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="LovModule_EmployeesLovView1_1"
+    ViewObjectName="com.oracle.anc.fmwpoc.sf.model.views.lov.EmployeesLovView"
+    AMUsageName="LovModule"
+    ViewInstanceName="EmployeesLovView1"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ManagerId"
+    ListVOName="LovModule_EmployeesLovView1_1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_ManagerId_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ManagerId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmpId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="EmpName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Employees"
+    Entity="com.oracle.anc.fmwpoc.sf.model.entities.Employees"/>
+  <ViewAttribute
+    Name="EmpId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmpId"
+    EntityUsage="Employees"
+    AliasName="EMP_ID"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="EmpName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmpName"
+    EntityUsage="Employees"
+    AliasName="EMP_NAME"/>
+  <ViewAttribute
+    Name="EmpJobTitle"
+    PrecisionRule="true"
+    EntityAttrName="EmpJobTitle"
+    EntityUsage="Employees"
+    AliasName="EMP_JOB_TITLE"/>
+  <ViewAttribute
+    Name="ManagerId"
+    PrecisionRule="true"
+    EntityAttrName="ManagerId"
+    EntityUsage="Employees"
+    AliasName="MANAGER_ID"
+    LOVName="LOV_ManagerId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EmpEmail"
+    PrecisionRule="true"
+    EntityAttrName="EmpEmail"
+    EntityUsage="Employees"
+    AliasName="EMP_EMAIL"/>
+  <ViewAttribute
+    Name="EmpPhone"
+    PrecisionRule="true"
+    EntityAttrName="EmpPhone"
+    EntityUsage="Employees"
+    AliasName="EMP_PHONE"/>
+  <ViewAttribute
+    Name="EmpYearlyTargetAmount"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmpYearlyTargetAmount"
+    EntityUsage="Employees"
+    AliasName="EMP_YEARLY_TARGET_AMOUNT"/>
+  <ViewAttribute
+    Name="EmpPhoto"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="EmpPhoto"
+    EntityUsage="Employees"
+    AliasName="EMP_PHOTO"/>
+  <ViewAttribute
+    Name="Username"
+    PrecisionRule="true"
+    EntityAttrName="Username"
+    EntityUsage="Employees"
+    AliasName="USERNAME"/>
+  <ViewAttribute
+    Name="Password"
+    PrecisionRule="true"
+    EntityAttrName="Password"
+    EntityUsage="Employees"
+    AliasName="PASSWORD"/>
+  <ViewLinkAccessor
+    Name="EmployeesView"
+    ViewLink="com.oracle.anc.fmwpoc.sf.model.views.EmpManagerFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="OpportunitiesView"
+    ViewLink="com.oracle.anc.fmwpoc.sf.model.views.OppEmpFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

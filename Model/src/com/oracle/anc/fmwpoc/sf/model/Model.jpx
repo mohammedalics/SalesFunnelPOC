@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Model"
+  Version="11.1.1.64.93"
+  SeparateXMLFiles="true"
+  PackageName="com.oracle.anc.fmwpoc.sf.model">
+  <DesignTime>
+    <Attr Name="_jprName" Value="../../../../../../../Model.jpr"/>
+    <Attr Name="_NamedConnection" Value="sf"/>
+    <Attr Name="_appModuleNames0"
+      Value="com.oracle.anc.fmwpoc.sf.model.SalesFunnelModule"/>
+    <Attr Name="_appModuleNames1"
+      Value="com.oracle.anc.fmwpoc.sf.model.LovModule"/>
+  </DesignTime>
+  <Containee
+    Name="entities"
+    PackageName="com.oracle.anc.fmwpoc.sf.model.entities"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="model"
+    PackageName="com.oracle.anc.fmwpoc.sf.model"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="lov"
+    PackageName="com.oracle.anc.fmwpoc.sf.model.views.lov"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="views"
+    PackageName="com.oracle.anc.fmwpoc.sf.model.views"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+      <Attr Name="_VL" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <AppModuleUsage
+    Name="LovModule"
+    FullName="com.oracle.anc.fmwpoc.sf.model.LovModule"
+    ConfigurationName="com.oracle.anc.fmwpoc.sf.model.LovModuleShared"
+    SharedScope="1"/>
+</JboProject>
