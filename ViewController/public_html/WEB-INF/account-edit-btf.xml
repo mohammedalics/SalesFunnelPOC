@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="account-edit-btf">
+    <template-reference>
+      <document id="__1">/WEB-INF/templates/sf-btf-template.xml</document>
+      <id id="__2">sf-btf-template</id>
+    </template-reference>
+    <default-activity id="__3">accEdit</default-activity>
+    <transaction id="__4">
+      <requires-transaction/>
+    </transaction>
+    <data-control-scope id="__5">
+      <isolated/>
+    </data-control-scope>
+    <view id="accEdit">
+      <page>/account/accEdit.jsff</page>
+    </view>
+    <task-flow-return id="accEditCommit">
+      <outcome id="__6">
+        <name>accEditCommit</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="accEditRollback">
+      <outcome id="__7">
+        <name>accEditRollback</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__8">
+      <from-activity-id id="__9">accEdit</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome id="__12">save</from-outcome>
+        <to-activity-id id="__10">accEditCommit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__13">
+        <from-outcome id="__15">cancel</from-outcome>
+        <to-activity-id id="__14">accEditRollback</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

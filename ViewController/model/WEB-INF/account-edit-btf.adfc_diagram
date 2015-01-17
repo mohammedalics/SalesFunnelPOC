@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">accEdit</property>
+      <property
+         name="page">/account/accEdit.jsff</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>accEdit&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">120.896484</property>
+      <property
+         name="x">320.0</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn3">
+      <property
+         name="activityId">accEditCommit</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>accEditCommit&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  accEditCommit&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">12.948242</property>
+      <property
+         name="x">535.0</property>
+   </TaskFlowReturn>
+   <TaskFlowReturn
+      id="TaskFlowReturn4">
+      <property
+         name="activityId">accEditRollback</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>accEditRollback&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  accEditRollback&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">214.24707</property>
+      <property
+         name="x">529.0</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View2"
+      to="TaskFlowReturn3">
+      <property
+         name="fromOutcome">save</property>
+      <property
+         name="sdm:polyPoints">R46,361.0,117.0459,494.0,12.597656,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View2"
+      to="TaskFlowReturn4">
+      <property
+         name="fromOutcome">cancel</property>
+      <property
+         name="sdm:polyPoints">R54,361.0,124.0459,488.0,213.89648,L50</property>
+   </ControlFlowCase>
+</SDM>

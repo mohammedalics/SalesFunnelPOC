@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:pageTemplate viewId="/templates/sFfragmentTemplate.jspx"
+                   value="#{bindings.pageTemplateBinding}" id="pt1">
+    <f:facet name="toolbar">
+      <af:group id="g1">
+        <af:commandToolbarButton text="Save" id="ctb1" action="save"/>
+        <af:commandToolbarButton text="Cancel" id="ctb2" action="cancel"/>
+      </af:group>
+    </f:facet>
+    <f:facet name="content">
+      <af:panelFormLayout id="pfl1">
+        <af:inputText value="#{bindings.AccName.inputValue}"
+                      label="#{bindings.AccName.hints.label}"
+                      required="#{bindings.AccName.hints.mandatory}"
+                      columns="#{bindings.AccName.hints.displayWidth}"
+                      maximumLength="#{bindings.AccName.hints.precision}"
+                      shortDesc="#{bindings.AccName.hints.tooltip}" id="it5">
+          <f:validator binding="#{bindings.AccName.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.AccAddress1.inputValue}"
+                      label="#{bindings.AccAddress1.hints.label}"
+                      required="#{bindings.AccAddress1.hints.mandatory}"
+                      columns="#{bindings.AccAddress1.hints.displayWidth}"
+                      maximumLength="#{bindings.AccAddress1.hints.precision}"
+                      shortDesc="#{bindings.AccAddress1.hints.tooltip}"
+                      id="it8">
+          <f:validator binding="#{bindings.AccAddress1.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.AccAddress2.inputValue}"
+                      label="#{bindings.AccAddress2.hints.label}"
+                      required="#{bindings.AccAddress2.hints.mandatory}"
+                      columns="#{bindings.AccAddress2.hints.displayWidth}"
+                      maximumLength="#{bindings.AccAddress2.hints.precision}"
+                      shortDesc="#{bindings.AccAddress2.hints.tooltip}"
+                      id="it9">
+          <f:validator binding="#{bindings.AccAddress2.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.AccZip.inputValue}"
+                      label="#{bindings.AccZip.hints.label}"
+                      required="#{bindings.AccZip.hints.mandatory}"
+                      columns="#{bindings.AccZip.hints.displayWidth}"
+                      maximumLength="#{bindings.AccZip.hints.precision}"
+                      shortDesc="#{bindings.AccZip.hints.tooltip}" id="it11">
+          <f:validator binding="#{bindings.AccZip.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.AccCity.inputValue}"
+                      label="#{bindings.AccCity.hints.label}"
+                      required="#{bindings.AccCity.hints.mandatory}"
+                      columns="#{bindings.AccCity.hints.displayWidth}"
+                      maximumLength="#{bindings.AccCity.hints.precision}"
+                      shortDesc="#{bindings.AccCity.hints.tooltip}" id="it2">
+          <f:validator binding="#{bindings.AccCity.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.AccCountry.inputValue}"
+                      label="#{bindings.AccCountry.hints.label}"
+                      required="#{bindings.AccCountry.hints.mandatory}"
+                      columns="#{bindings.AccCountry.hints.displayWidth}"
+                      maximumLength="#{bindings.AccCountry.hints.precision}"
+                      shortDesc="#{bindings.AccCountry.hints.tooltip}" id="it7">
+          <f:validator binding="#{bindings.AccCountry.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.AccVatid.inputValue}"
+                      label="#{bindings.AccVatid.hints.label}"
+                      required="#{bindings.AccVatid.hints.mandatory}"
+                      columns="#{bindings.AccVatid.hints.displayWidth}"
+                      maximumLength="#{bindings.AccVatid.hints.precision}"
+                      shortDesc="#{bindings.AccVatid.hints.tooltip}" id="it4">
+          <f:validator binding="#{bindings.AccVatid.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.AccTwitter.inputValue}"
+                      label="#{bindings.AccTwitter.hints.label}"
+                      required="#{bindings.AccTwitter.hints.mandatory}"
+                      columns="#{bindings.AccTwitter.hints.displayWidth}"
+                      maximumLength="#{bindings.AccTwitter.hints.precision}"
+                      shortDesc="#{bindings.AccTwitter.hints.tooltip}" id="it3">
+          <f:validator binding="#{bindings.AccTwitter.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.AccFacebook.inputValue}"
+                      label="#{bindings.AccFacebook.hints.label}"
+                      required="#{bindings.AccFacebook.hints.mandatory}"
+                      columns="#{bindings.AccFacebook.hints.displayWidth}"
+                      maximumLength="#{bindings.AccFacebook.hints.precision}"
+                      shortDesc="#{bindings.AccFacebook.hints.tooltip}"
+                      id="it10">
+          <f:validator binding="#{bindings.AccFacebook.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.AccWww.inputValue}"
+                      label="#{bindings.AccWww.hints.label}"
+                      required="#{bindings.AccWww.hints.mandatory}"
+                      columns="#{bindings.AccWww.hints.displayWidth}"
+                      maximumLength="#{bindings.AccWww.hints.precision}"
+                      shortDesc="#{bindings.AccWww.hints.tooltip}" id="it6">
+          <f:validator binding="#{bindings.AccWww.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.AccForumId.inputValue}"
+                      label="#{bindings.AccForumId.hints.label}"
+                      required="#{bindings.AccForumId.hints.mandatory}"
+                      columns="#{bindings.AccForumId.hints.displayWidth}"
+                      maximumLength="#{bindings.AccForumId.hints.precision}"
+                      shortDesc="#{bindings.AccForumId.hints.tooltip}"
+                      id="it12">
+          <f:validator binding="#{bindings.AccForumId.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.AccStockSymbol.inputValue}"
+                      label="#{bindings.AccStockSymbol.hints.label}"
+                      required="#{bindings.AccStockSymbol.hints.mandatory}"
+                      columns="#{bindings.AccStockSymbol.hints.displayWidth}"
+                      maximumLength="#{bindings.AccStockSymbol.hints.precision}"
+                      shortDesc="#{bindings.AccStockSymbol.hints.tooltip}"
+                      id="it1">
+          <f:validator binding="#{bindings.AccStockSymbol.validator}"/>
+        </af:inputText>
+      </af:panelFormLayout>
+    </f:facet>
+    <f:attribute name="pageTitle" value="Account"/>
+  </af:pageTemplate>
+</jsp:root>
