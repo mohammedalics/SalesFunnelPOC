@@ -57,9 +57,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">93.34473</property>
+         name="y">89.643555</property>
       <property
-         name="x">129.35156</property>
+         name="x">93.35156</property>
    </MethodCall>
    <ControlFlowCase
       islink="true"
@@ -69,6 +69,6 @@
       <property
          name="fromOutcome">ExecuteWithParams</property>
       <property
-         name="sdm:polyPoints">R50,170.35156,92.99414,336.0,88.143555,L50</property>
+         name="sdm:polyPoints">R50,134.35156,89.29297,336.0,88.143555,L50</property>
    </ControlFlowCase>
 </SDM>

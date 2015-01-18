@@ -44,5 +44,21 @@
               country="AccCountry" postalCode="AccZip"/>
       </mapThemeDataMap>
     </mapTheme>
+    <graph IterBinding="OpportunitiesView4Iterator" id="OpportunitiesView42"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="BUBBLE">
+      <graphDataMap leafOnly="true">
+        <series>
+          <item value="AccCountry"/>
+        </series>
+        <groups>
+          <item value="OppTitle"/>
+          <data>
+            <item value="ExpectedCloseTimeline"/>
+            <item value="OppProbability"/>
+            <item value="OppEstimatedAmount"/>
+          </data>
+        </groups>
+      </graphDataMap>
+    </graph>
   </bindings>
 </pageDefinition>

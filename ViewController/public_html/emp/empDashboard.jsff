@@ -115,6 +115,23 @@
                                    builtInImage="Flag_Green"/>
               </dvt:map>
             </af:showDetailItem>
+            <af:showDetailItem text="Lead Timeline" id="sdi3"
+                               stretchChildren="first">
+              <dvt:bubbleGraph id="bubbleGraph1"
+                               value="#{bindings.OpportunitiesView42.graphModel}"
+                               subType="BUBBLE" dynamicResize="DYNAMIC_SIZE">
+                <dvt:background>
+                  <dvt:specialEffects/>
+                </dvt:background>
+                <dvt:graphPlotArea/>
+                <dvt:seriesSet>
+                  <dvt:series/>
+                </dvt:seriesSet>
+                <dvt:x1Axis/>
+                <dvt:y1Axis/>
+                <dvt:legendArea automaticPlacement="AP_NEVER"/>
+              </dvt:bubbleGraph>
+            </af:showDetailItem>
           </af:panelTabbed>
         </f:facet>
       </af:panelSplitter>

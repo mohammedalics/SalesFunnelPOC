@@ -148,26 +148,6 @@ public class OpportunitiesViewRowImpl extends ViewRowImpl {
             }
         }
         ,
-        AccName {
-            public Object get(OpportunitiesViewRowImpl obj) {
-                return obj.getAccName();
-            }
-
-            public void put(OpportunitiesViewRowImpl obj, Object value) {
-                obj.setAccName((String)value);
-            }
-        }
-        ,
-        CntName {
-            public Object get(OpportunitiesViewRowImpl obj) {
-                return obj.getCntName();
-            }
-
-            public void put(OpportunitiesViewRowImpl obj, Object value) {
-                obj.setCntName((String)value);
-            }
-        }
-        ,
         AccAddress1 {
             public Object get(OpportunitiesViewRowImpl obj) {
                 return obj.getAccAddress1();
@@ -215,6 +195,36 @@ public class OpportunitiesViewRowImpl extends ViewRowImpl {
 
             public void put(OpportunitiesViewRowImpl obj, Object value) {
                 obj.setAccId1((Number)value);
+            }
+        }
+        ,
+        ExpectedCloseTimeline {
+            public Object get(OpportunitiesViewRowImpl obj) {
+                return obj.getExpectedCloseTimeline();
+            }
+
+            public void put(OpportunitiesViewRowImpl obj, Object value) {
+                obj.setExpectedCloseTimeline((Number)value);
+            }
+        }
+        ,
+        AccName {
+            public Object get(OpportunitiesViewRowImpl obj) {
+                return obj.getAccName();
+            }
+
+            public void put(OpportunitiesViewRowImpl obj, Object value) {
+                obj.setAccName((String)value);
+            }
+        }
+        ,
+        CntName {
+            public Object get(OpportunitiesViewRowImpl obj) {
+                return obj.getCntName();
+            }
+
+            public void put(OpportunitiesViewRowImpl obj, Object value) {
+                obj.setCntName((String)value);
             }
         }
         ,
@@ -280,13 +290,14 @@ public class OpportunitiesViewRowImpl extends ViewRowImpl {
     public static final int EXPECTEDCLOSEDATE = AttributesEnum.ExpectedCloseDate.index();
     public static final int CLOSEDATE = AttributesEnum.CloseDate.index();
     public static final int OPPKEYMAP = AttributesEnum.OppKeyMap.index();
-    public static final int ACCNAME = AttributesEnum.AccName.index();
-    public static final int CNTNAME = AttributesEnum.CntName.index();
     public static final int ACCADDRESS1 = AttributesEnum.AccAddress1.index();
     public static final int ACCCITY = AttributesEnum.AccCity.index();
     public static final int ACCCOUNTRY = AttributesEnum.AccCountry.index();
     public static final int ACCZIP = AttributesEnum.AccZip.index();
     public static final int ACCID1 = AttributesEnum.AccId1.index();
+    public static final int EXPECTEDCLOSETIMELINE = AttributesEnum.ExpectedCloseTimeline.index();
+    public static final int ACCNAME = AttributesEnum.AccName.index();
+    public static final int CNTNAME = AttributesEnum.CntName.index();
     public static final int LOVMODULE_ACCOUNTSLOVVIEW1_1 = AttributesEnum.LovModule_AccountsLovView1_1.index();
     public static final int LOVMODULE_CONTACTSLOVVIEW1_1 = AttributesEnum.LovModule_ContactsLovView1_1.index();
 
@@ -630,6 +641,22 @@ public class OpportunitiesViewRowImpl extends ViewRowImpl {
      */
     public void setAccId1(Number value) {
         setAttributeInternal(ACCID1, value);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute ExpectedCloseTimeline.
+     * @return the ExpectedCloseTimeline
+     */
+    public Number getExpectedCloseTimeline() {
+        return (Number) getAttributeInternal(EXPECTEDCLOSETIMELINE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for the calculated attribute ExpectedCloseTimeline.
+     * @param value value to set the  ExpectedCloseTimeline
+     */
+    public void setExpectedCloseTimeline(Number value) {
+        setAttributeInternal(EXPECTEDCLOSETIMELINE, value);
     }
 
     /**
