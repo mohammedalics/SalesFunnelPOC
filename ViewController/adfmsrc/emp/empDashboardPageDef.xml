@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="empDashboardPageDef" Package="emp">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmployeesView1" RangeSize="25"
+              DataControl="SalesFunnelModuleDataControl"
+              id="EmployeesView1Iterator"/>
+    <iterator Binds="OpportunitiesView4" RangeSize="25"
+              DataControl="SalesFunnelModuleDataControl"
+              id="OpportunitiesView4Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EmployeesView1Iterator" id="EmpName">
+      <AttrNames>
+        <Item Value="EmpName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesView1Iterator" id="EmpJobTitle">
+      <AttrNames>
+        <Item Value="EmpJobTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="OpportunitiesView4Iterator" id="OpportunitiesView4">
+      <nodeDefinition DefName="com.oracle.anc.fmwpoc.sf.model.views.OpportunitiesView"
+                      Name="OpportunitiesView40">
+        <AttrNames>
+          <Item Value="OppTitle"/>
+          <Item Value="AccName"/>
+          <Item Value="OppEstimatedAmount"/>
+          <Item Value="OppProbability"/>
+          <Item Value="ExpectedCloseDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

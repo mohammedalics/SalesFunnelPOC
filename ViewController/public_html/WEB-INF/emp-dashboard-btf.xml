@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="emp-dashboard-btf">
+    <template-reference>
+      <document id="__2">/WEB-INF/templates/sf-btf-template.xml</document>
+      <id id="__1">sf-btf-template</id>
+    </template-reference>
+    <default-activity id="__16">ExecuteWithParams</default-activity>
+    <view id="empDashboard">
+      <page>/emp/empDashboard.jsff</page>
+    </view>
+    <task-flow-return id="dashboardReturn">
+      <outcome id="__4">
+        <name>dashboardReturn</name>
+      </outcome>
+    </task-flow-return>
+    <method-call id="ExecuteWithParams">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome id="__10">
+        <fixed-outcome>ExecuteWithParams</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__5">
+      <from-activity-id id="__6">empDashboard</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome id="__9">exit</from-outcome>
+        <to-activity-id id="__7">dashboardReturn</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__11">
+      <from-activity-id id="__12">ExecuteWithParams</from-activity-id>
+      <control-flow-case id="__14">
+        <from-outcome id="__15">ExecuteWithParams</from-outcome>
+        <to-activity-id id="__13">empDashboard</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
