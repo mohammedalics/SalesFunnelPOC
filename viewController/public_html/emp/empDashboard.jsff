@@ -103,6 +103,7 @@
           <af:panelTabbed id="pt1">
             <af:showDetailItem text="Lead Locations" id="sdi1"
                                stretchChildren="first">
+                               
               <dvt:mapToolbar mapId="map" id="mt1"/>
               <dvt:map id="map" startingX="14" mapServerConfigId="mapConfig1"
                        baseMapName="ELOCATION.WORLD_MAP" mapZoom="3"
