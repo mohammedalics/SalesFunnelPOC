@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <af:decorativeBox id="db1" theme="medium">
+    <f:facet name="center">
+      <af:panelSplitter id="ps1" orientation="vertical" splitterPosition="290">
+        <f:facet name="first">
+          <af:panelSplitter id="ps2">
+            <f:facet name="first">
+              <af:panelBox text="Employee" id="pb2" showDisclosure="false">
+                <f:facet name="toolbar"/>
+                <af:panelFormLayout id="pfl1">
+                  <af:outputText value="#{bindings.EmpName.inputValue}"
+                                 id="ot1"/>
+                  <af:outputText value="#{bindings.EmpJobTitle.inputValue}"
+                                 id="ot2"/>
+                </af:panelFormLayout>
+              </af:panelBox>
+            </f:facet>
+            <f:facet name="second">
+              <af:panelStretchLayout id="psl1" endWidth="200px">
+                <f:facet name="bottom"/>
+                <f:facet name="center">
+                  <af:panelBox text="Leads" id="pb1" showDisclosure="false">
+                    <f:facet name="toolbar">
+                      <af:toolbar id="t1">
+                        <af:commandToolbarButton text="Exit"
+                                                 id="ctb1" action="exit"/>
+                      </af:toolbar>
+                    </f:facet>
+                    <af:table value="#{bindings.OpportunitiesView4.collectionModel}"
+                              var="row"
+                              rows="#{bindings.OpportunitiesView4.rangeSize}"
+                              emptyText="#{bindings.OpportunitiesView4.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              fetchSize="#{bindings.OpportunitiesView4.rangeSize}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.OpportunitiesView4.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.OpportunitiesView4.collectionModel.makeCurrent}"
+                              rowSelection="single" id="t2"
+                              columnStretching="column:c1"
+                              displayRow="selected" partialTriggers="::map">
+                      <af:column sortProperty="#{bindings.OpportunitiesView4.hints.OppTitle.name}"
+                                 sortable="true"
+                                 headerText="#{bindings.OpportunitiesView4.hints.OppTitle.label}"
+                                 id="c5">
+                        <af:outputText value="#{row.OppTitle}" id="ot7"/>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.OpportunitiesView4.hints.AccName.name}"
+                                 sortable="true"
+                                 headerText="#{bindings.OpportunitiesView4.hints.AccName.label}"
+                                 id="c2">
+                        <af:outputText value="#{row.AccName}" id="ot3"/>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.OpportunitiesView4.hints.OppEstimatedAmount.name}"
+                                 sortable="true"
+                                 headerText="#{bindings.OpportunitiesView4.hints.OppEstimatedAmount.label}"
+                                 id="c4">
+                        <af:outputText value="#{row.OppEstimatedAmount}"
+                                       id="ot5">
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.OpportunitiesView4.hints.OppEstimatedAmount.format}"/>
+                        </af:outputText>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.OpportunitiesView4.hints.OppProbability.name}"
+                                 sortable="true"
+                                 headerText="#{bindings.OpportunitiesView4.hints.OppProbability.label}"
+                                 id="c1" width="160">
+                        <af:inputNumberSlider value="#{row.OppProbability}"
+                                              id="ot4" maximum="100"
+                                              minimumIncrement="5"
+                                              majorIncrement="10">
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.OpportunitiesView4.hints.OppProbability.format}"/>
+                        </af:inputNumberSlider>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.OpportunitiesView4.hints.ExpectedCloseDate.name}"
+                                 sortable="true"
+                                 headerText="#{bindings.OpportunitiesView4.hints.ExpectedCloseDate.label}"
+                                 id="c3">
+                        <af:outputText value="#{row.ExpectedCloseDate}"
+                                       id="ot6">
+                          <af:convertDateTime pattern="#{bindings.OpportunitiesView4.hints.ExpectedCloseDate.format}"/>
+                        </af:outputText>
+                      </af:column>
+                    </af:table>
+                  </af:panelBox>
+                </f:facet>
+                <f:facet name="start"/>
+                <f:facet name="end">
+                  <af:panelTabbed id="pt2">
+                    <af:showDetailItem text="Target" id="sdi2"
+                                       stretchChildren="first"/>
+                  </af:panelTabbed>
+                </f:facet>
+                <f:facet name="top"/>
+              </af:panelStretchLayout>
+            </f:facet>
+          </af:panelSplitter>
+        </f:facet>
+        <f:facet name="second">
+          <af:panelTabbed id="pt1">
+            <af:showDetailItem text="Lead Locations" id="sdi1"
+                               stretchChildren="first">
+              <dvt:mapToolbar mapId="map" id="mt1"/>
+              <dvt:map id="map" startingX="14" mapServerConfigId="mapConfig1"
+                       baseMapName="ELOCATION.WORLD_MAP" mapZoom="3"
+                       inlineStyle="width:100%; height:600px;" startingY="45">
+                <dvt:mapPointTheme id="mapPointTheme1"
+                                   value="#{bindings.OpportunitiesView41.geoMapModel}"
+                                   clickListener="#{bindings.OpportunitiesView41.geoMapModel.processClickAction}"
+                                   selectionListener="#{bindings.OpportunitiesView41.geoMapModel.processSelection}"
+                                   builtInImage="Flag_Green"/>
+              </dvt:map>
+            </af:showDetailItem>
+          </af:panelTabbed>
+        </f:facet>
+      </af:panelSplitter>
+    </f:facet>
+    <f:facet name="top"/>
+  </af:decorativeBox>
+</jsp:root>
