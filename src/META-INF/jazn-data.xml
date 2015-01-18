@@ -120,6 +120,12 @@
             <description>/WEB-INF/contact-edit-btf.xml#contact-edit-btf</description>
             <type-name-ref>TaskFlowResourceType</type-name-ref>
           </resource>
+          <resource>
+            <name>/WEB-INF/emp-dashboard-btf.xml#emp-dashboard-btf</name>
+            <display-name>emp-dashboard-btf(/WEB-INF)</display-name>
+            <description>/WEB-INF/emp-dashboard-btf.xml#emp-dashboard-btf</description>
+            <type-name-ref>TaskFlowResourceType</type-name-ref>
+          </resource>
         </resources>
         <permission-sets>
           <permission-set>
@@ -183,6 +189,12 @@
                 <resource-name>/WEB-INF/contact-edit-btf.xml#contact-edit-btf</resource-name>
                 <type-name-ref>TaskFlowResourceType</type-name-ref>
                 <display-name>contact-edit-btf(/WEB-INF)</display-name>
+                <actions>view</actions>
+              </member-resource>
+              <member-resource>
+                <resource-name>/WEB-INF/emp-dashboard-btf.xml#emp-dashboard-btf</resource-name>
+                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                <display-name>emp-dashboard-btf(/WEB-INF)</display-name>
                 <actions>view</actions>
               </member-resource>
             </member-resources>

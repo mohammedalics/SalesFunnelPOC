@@ -20,7 +20,11 @@
     ViewObjectName="com.oracle.anc.fmwpoc.sf.model.views.ContactsView"/>
   <ViewUsage
     Name="EmployeesView1"
-    ViewObjectName="com.oracle.anc.fmwpoc.sf.model.views.EmployeesView"/>
+    ViewObjectName="com.oracle.anc.fmwpoc.sf.model.views.EmployeesView">
+    <ViewCriteriaUsage
+      Name="EmpIdVC"
+      FullName="com.oracle.anc.fmwpoc.sf.model.views.EmployeesView.EmpIdVC"/>
+  </ViewUsage>
   <ViewUsage
     Name="OpportunitiesView1"
     ViewObjectName="com.oracle.anc.fmwpoc.sf.model.views.OpportunitiesView"/>

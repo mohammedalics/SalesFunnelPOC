@@ -29,6 +29,10 @@
           usageId="com_oracle_anc_fmwpoc_sf_view_lead_edit_btf_lead_edit_btf_refreshContactsLOVPageDef"/>
     <page path="/WEB-INF/account-edit-btf.xml#account-edit-btf@Commit"
           usageId="com_oracle_anc_fmwpoc_sf_view_account_edit_btf_account_edit_btf_CommitPageDef"/>
+    <page path="/WEB-INF/emp-dashboard-btf.xml#emp-dashboard-btf@ExecuteWithParams"
+          usageId="com_oracle_anc_fmwpoc_sf_view_emp_dashboard_btf_emp_dashboard_btf_ExecuteWithParamsPageDef"/>
+    <page path="/emp/empDashboard.jsff"
+          usageId="com_oracle_anc_fmwpoc_sf_view_empDashboardPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_oracle_anc_fmwpoc_sf_view_mainPageDef"
@@ -57,6 +61,10 @@
           path="com.oracle.anc.fmwpoc.sf.view.pageDefs.lead_edit_btf_lead_edit_btf_refreshContactsLOVPageDef"/>
     <page id="com_oracle_anc_fmwpoc_sf_view_account_edit_btf_account_edit_btf_CommitPageDef"
           path="com.oracle.anc.fmwpoc.sf.view.pageDefs.account_edit_btf_account_edit_btf_CommitPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_emp_dashboard_btf_emp_dashboard_btf_ExecuteWithParamsPageDef"
+          path="com.oracle.anc.fmwpoc.sf.view.pageDefs.emp_dashboard_btf_emp_dashboard_btf_ExecuteWithParamsPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_empDashboardPageDef"
+          path="emp.empDashboardPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="SalesFunnelModuleDataControl"

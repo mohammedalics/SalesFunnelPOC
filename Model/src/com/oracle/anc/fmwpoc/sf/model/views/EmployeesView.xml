@@ -24,6 +24,17 @@
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
   </DesignTime>
+  <Variable
+    Name="pEmpId"
+    Kind="viewcriteria"
+    Type="oracle.jbo.domain.Number">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <ViewAccessor
     Name="LovModule_EmployeesLovView1_1"
     ViewObjectName="com.oracle.anc.fmwpoc.sf.model.views.lov.EmployeesLovView"
@@ -124,6 +135,44 @@
     EntityAttrName="Password"
     EntityUsage="Employees"
     AliasName="PASSWORD"/>
+  <ViewCriteria
+    Name="EmpIdVC"
+    ViewObjectName="com.oracle.anc.fmwpoc.sf.model.views.EmployeesView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="vcrow1"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="EmpId"
+        ViewAttribute="EmpId"
+        Operator="="
+        Conjunction="AND"
+        Value=":pEmpId"
+        GenerateIsNullClauseForBindVars="false"
+        ValidateBindVars="true"
+        IsBindVarValue="true"
+        Required="Required"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="EmployeesView"
     ViewLink="com.oracle.anc.fmwpoc.sf.model.views.EmpManagerFk1Link"

@@ -28,4 +28,7 @@ public class MainBean {
         }
 
     }
+
+    public void launchMyDashboard(ActionEvent actionEvent) {
+        _launchActivity("My Dashboard", "/WEB-INF/emp-dashboard-btf.xml", false);    }
 }

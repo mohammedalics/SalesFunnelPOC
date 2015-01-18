@@ -18,6 +18,9 @@
                   <af:commandNavigationItem text="New Lead"
                                             id="cni1"
                                             actionListener="#{backingBeanScope.MainBean.launchLeadCreate}"/>
+                  <af:commandNavigationItem text="My Leads"
+                                            id="cni2"
+                                            actionListener="#{backingBeanScope.MainBean.launchMyDashboard}"/>
                 </af:navigationPane>
               </af:showDetailItem>
               <af:showDetailItem text="Sales Intelligence" id="sdi2"
