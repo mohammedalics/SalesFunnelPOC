@@ -18,8 +18,13 @@
        Opportunities.EMP_ID, 
        Opportunities.EXPECTED_CLOSE_DATE, 
        Opportunities.CLOSE_DATE, 
-       Opportunities.OPP_KEY_MAP"
-  FromList="OPPORTUNITIES Opportunities"
+       Opportunities.OPP_KEY_MAP, 
+       Accounts.ACC_ADDRESS1, 
+       Accounts.ACC_CITY, 
+       Accounts.ACC_COUNTRY, 
+       Accounts.ACC_ZIP, 
+       Accounts.ACC_ID AS ACC_ID1"
+  FromList="OPPORTUNITIES Opportunities, ACCOUNTS Accounts"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
@@ -27,7 +32,8 @@
   RowClass="com.oracle.anc.fmwpoc.sf.model.views.OpportunitiesViewRowImpl"
   ComponentClass="com.oracle.anc.fmwpoc.sf.model.views.OpportunitiesViewImpl"
   ComponentInterface="com.oracle.anc.fmwpoc.sf.model.views.common.OpportunitiesView"
-  ClientProxyName="com.oracle.anc.fmwpoc.sf.model.views.client.OpportunitiesViewClient">
+  ClientProxyName="com.oracle.anc.fmwpoc.sf.model.views.client.OpportunitiesViewClient"
+  Where="Opportunities.ACC_ID = Accounts.ACC_ID(+)">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Access|Coll"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -96,6 +102,26 @@
   <EntityUsage
     Name="Opportunities"
     Entity="com.oracle.anc.fmwpoc.sf.model.entities.Opportunities"/>
+  <EntityUsage
+    Name="Accounts"
+    Entity="com.oracle.anc.fmwpoc.sf.model.entities.Accounts"
+    Association="com.oracle.anc.fmwpoc.sf.model.entities.OppAccFk1Assoc"
+    AssociationEnd="com.oracle.anc.fmwpoc.sf.model.entities.OppAccFk1Assoc.Accounts"
+    SourceUsage="com.oracle.anc.fmwpoc.sf.model.views.OpportunitiesView.Opportunities"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="com.oracle.anc.fmwpoc.sf.model.entities.Opportunities.AccId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="com.oracle.anc.fmwpoc.sf.model.entities.Accounts.AccId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="OppId"
     IsNotNull="true"
@@ -232,6 +258,41 @@ return LovModule_ContactsLovView1_1.findByKey(key, 1)[0].getAttribute("CntName")
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="AccAddress1"
+    PrecisionRule="true"
+    EntityAttrName="AccAddress1"
+    EntityUsage="Accounts"
+    AliasName="ACC_ADDRESS1"/>
+  <ViewAttribute
+    Name="AccCity"
+    PrecisionRule="true"
+    EntityAttrName="AccCity"
+    EntityUsage="Accounts"
+    AliasName="ACC_CITY"/>
+  <ViewAttribute
+    Name="AccCountry"
+    PrecisionRule="true"
+    EntityAttrName="AccCountry"
+    EntityUsage="Accounts"
+    AliasName="ACC_COUNTRY"/>
+  <ViewAttribute
+    Name="AccZip"
+    PrecisionRule="true"
+    EntityAttrName="AccZip"
+    EntityUsage="Accounts"
+    AliasName="ACC_ZIP"/>
+  <ViewAttribute
+    Name="AccId1"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AccId"
+    EntityUsage="Accounts"
+    AliasName="ACC_ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="OppId"/>
+  </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.oracle.anc.fmwpoc.sf.model.ModelBundle"/>

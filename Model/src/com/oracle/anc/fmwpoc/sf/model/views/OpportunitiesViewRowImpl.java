@@ -168,6 +168,56 @@ public class OpportunitiesViewRowImpl extends ViewRowImpl {
             }
         }
         ,
+        AccAddress1 {
+            public Object get(OpportunitiesViewRowImpl obj) {
+                return obj.getAccAddress1();
+            }
+
+            public void put(OpportunitiesViewRowImpl obj, Object value) {
+                obj.setAccAddress1((String)value);
+            }
+        }
+        ,
+        AccCity {
+            public Object get(OpportunitiesViewRowImpl obj) {
+                return obj.getAccCity();
+            }
+
+            public void put(OpportunitiesViewRowImpl obj, Object value) {
+                obj.setAccCity((String)value);
+            }
+        }
+        ,
+        AccCountry {
+            public Object get(OpportunitiesViewRowImpl obj) {
+                return obj.getAccCountry();
+            }
+
+            public void put(OpportunitiesViewRowImpl obj, Object value) {
+                obj.setAccCountry((String)value);
+            }
+        }
+        ,
+        AccZip {
+            public Object get(OpportunitiesViewRowImpl obj) {
+                return obj.getAccZip();
+            }
+
+            public void put(OpportunitiesViewRowImpl obj, Object value) {
+                obj.setAccZip((String)value);
+            }
+        }
+        ,
+        AccId1 {
+            public Object get(OpportunitiesViewRowImpl obj) {
+                return obj.getAccId1();
+            }
+
+            public void put(OpportunitiesViewRowImpl obj, Object value) {
+                obj.setAccId1((Number)value);
+            }
+        }
+        ,
         LovModule_AccountsLovView1_1 {
             public Object get(OpportunitiesViewRowImpl obj) {
                 return obj.getLovModule_AccountsLovView1_1();
@@ -215,6 +265,8 @@ public class OpportunitiesViewRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
+
     public static final int OPPID = AttributesEnum.OppId.index();
     public static final int OPPTITLE = AttributesEnum.OppTitle.index();
     public static final int ACCID = AttributesEnum.AccId.index();
@@ -230,6 +282,11 @@ public class OpportunitiesViewRowImpl extends ViewRowImpl {
     public static final int OPPKEYMAP = AttributesEnum.OppKeyMap.index();
     public static final int ACCNAME = AttributesEnum.AccName.index();
     public static final int CNTNAME = AttributesEnum.CntName.index();
+    public static final int ACCADDRESS1 = AttributesEnum.AccAddress1.index();
+    public static final int ACCCITY = AttributesEnum.AccCity.index();
+    public static final int ACCCOUNTRY = AttributesEnum.AccCountry.index();
+    public static final int ACCZIP = AttributesEnum.AccZip.index();
+    public static final int ACCID1 = AttributesEnum.AccId1.index();
     public static final int LOVMODULE_ACCOUNTSLOVVIEW1_1 = AttributesEnum.LovModule_AccountsLovView1_1.index();
     public static final int LOVMODULE_CONTACTSLOVVIEW1_1 = AttributesEnum.LovModule_ContactsLovView1_1.index();
 
@@ -245,6 +302,14 @@ public class OpportunitiesViewRowImpl extends ViewRowImpl {
      */
     public EntityImpl getOpportunities() {
         return (EntityImpl)getEntity(0);
+    }
+
+    /**
+     * Gets Accounts entity object.
+     * @return the Accounts
+     */
+    public EntityImpl getAccounts() {
+        return (EntityImpl)getEntity(1);
     }
 
     /**
@@ -485,6 +550,86 @@ public class OpportunitiesViewRowImpl extends ViewRowImpl {
      */
     public void setCntName(String value) {
         setAttributeInternal(CNTNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for ACC_ADDRESS1 using the alias name AccAddress1.
+     * @return the ACC_ADDRESS1
+     */
+    public String getAccAddress1() {
+        return (String) getAttributeInternal(ACCADDRESS1);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for ACC_ADDRESS1 using the alias name AccAddress1.
+     * @param value value to set the ACC_ADDRESS1
+     */
+    public void setAccAddress1(String value) {
+        setAttributeInternal(ACCADDRESS1, value);
+    }
+
+    /**
+     * Gets the attribute value for ACC_CITY using the alias name AccCity.
+     * @return the ACC_CITY
+     */
+    public String getAccCity() {
+        return (String) getAttributeInternal(ACCCITY);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for ACC_CITY using the alias name AccCity.
+     * @param value value to set the ACC_CITY
+     */
+    public void setAccCity(String value) {
+        setAttributeInternal(ACCCITY, value);
+    }
+
+    /**
+     * Gets the attribute value for ACC_COUNTRY using the alias name AccCountry.
+     * @return the ACC_COUNTRY
+     */
+    public String getAccCountry() {
+        return (String) getAttributeInternal(ACCCOUNTRY);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for ACC_COUNTRY using the alias name AccCountry.
+     * @param value value to set the ACC_COUNTRY
+     */
+    public void setAccCountry(String value) {
+        setAttributeInternal(ACCCOUNTRY, value);
+    }
+
+    /**
+     * Gets the attribute value for ACC_ZIP using the alias name AccZip.
+     * @return the ACC_ZIP
+     */
+    public String getAccZip() {
+        return (String) getAttributeInternal(ACCZIP);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for ACC_ZIP using the alias name AccZip.
+     * @param value value to set the ACC_ZIP
+     */
+    public void setAccZip(String value) {
+        setAttributeInternal(ACCZIP, value);
+    }
+
+    /**
+     * Gets the attribute value for ACC_ID using the alias name AccId1.
+     * @return the ACC_ID
+     */
+    public Number getAccId1() {
+        return (Number) getAttributeInternal(ACCID1);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for ACC_ID using the alias name AccId1.
+     * @param value value to set the ACC_ID
+     */
+    public void setAccId1(Number value) {
+        setAttributeInternal(ACCID1, value);
     }
 
     /**

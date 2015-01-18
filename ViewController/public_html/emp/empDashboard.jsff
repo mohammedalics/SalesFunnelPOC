@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
           xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-          xmlns:f="http://java.sun.com/jsf/core">
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
   <af:decorativeBox id="db1" theme="medium">
     <f:facet name="center">
       <af:panelSplitter id="ps1" orientation="vertical" splitterPosition="290">
@@ -38,7 +39,8 @@
                               selectedRowKeys="#{bindings.OpportunitiesView4.collectionModel.selectedRow}"
                               selectionListener="#{bindings.OpportunitiesView4.collectionModel.makeCurrent}"
                               rowSelection="single" id="t2"
-                              columnStretching="column:c1">
+                              columnStretching="column:c1"
+                              displayRow="selected" partialTriggers="::map">
                       <af:column sortProperty="#{bindings.OpportunitiesView4.hints.OppTitle.name}"
                                  sortable="true"
                                  headerText="#{bindings.OpportunitiesView4.hints.OppTitle.label}"
@@ -100,7 +102,18 @@
         <f:facet name="second">
           <af:panelTabbed id="pt1">
             <af:showDetailItem text="Lead Locations" id="sdi1"
-                               stretchChildren="first"/>
+                               stretchChildren="first">
+              <dvt:mapToolbar mapId="map" id="mt1"/>
+              <dvt:map id="map" startingX="14" mapServerConfigId="mapConfig1"
+                       baseMapName="ELOCATION.WORLD_MAP" mapZoom="3"
+                       inlineStyle="width:100%; height:600px;" startingY="45">
+                <dvt:mapPointTheme id="mapPointTheme1"
+                                   value="#{bindings.OpportunitiesView41.geoMapModel}"
+                                   clickListener="#{bindings.OpportunitiesView41.geoMapModel.processClickAction}"
+                                   selectionListener="#{bindings.OpportunitiesView41.geoMapModel.processSelection}"
+                                   builtInImage="Flag_Green"/>
+              </dvt:map>
+            </af:showDetailItem>
           </af:panelTabbed>
         </f:facet>
       </af:panelSplitter>

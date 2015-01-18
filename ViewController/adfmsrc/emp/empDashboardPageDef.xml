@@ -7,7 +7,7 @@
     <iterator Binds="EmployeesView1" RangeSize="25"
               DataControl="SalesFunnelModuleDataControl"
               id="EmployeesView1Iterator"/>
-    <iterator Binds="OpportunitiesView4" RangeSize="25"
+    <iterator Binds="OpportunitiesView4" RangeSize="-1"
               DataControl="SalesFunnelModuleDataControl"
               id="OpportunitiesView4Iterator"/>
   </executables>
@@ -34,5 +34,15 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <mapTheme IterBinding="OpportunitiesView4Iterator" id="OpportunitiesView41"
+              xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <mapThemeDataMap mapThemeType="point">
+        <data>
+          <item value="OppTitle"/>
+        </data>
+        <item type="gen_form_2" street="AccAddress1" city="AccCity"
+              country="AccCountry" postalCode="AccZip"/>
+      </mapThemeDataMap>
+    </mapTheme>
   </bindings>
 </pageDefinition>

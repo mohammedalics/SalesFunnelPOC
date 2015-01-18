@@ -2,6 +2,10 @@
 <Application xmlns="http://xmlns.oracle.com/adfm/application"
              version="11.1.1.64.93" id="DataBindings" SeparateXMLFiles="false"
              Package="com.oracle.anc.fmwpoc.sf.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
   <pageMap>
     <page path="/main.jspx"
           usageId="com_oracle_anc_fmwpoc_sf_view_mainPageDef"/>
