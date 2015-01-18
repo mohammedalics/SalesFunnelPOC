@@ -42,7 +42,7 @@
       <property
          name="fromOutcome">CreateInsert</property>
       <property
-         name="sdm:polyPoints">R50,164.01465,172.74707,324.56348,176.16602,L50</property>
+         name="sdm:polyPoints">R50,164.01465,172.39648,324.56348,176.16602,L50</property>
    </ControlFlowCase>
    <TaskFlowReturn
       id="TaskFlowReturn5">

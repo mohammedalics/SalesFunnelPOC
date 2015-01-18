@@ -15,11 +15,11 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">120.896484</property>
-      <property
-         name="x">320.0</property>
+         name="y">114.19531</property>
       <property
          name="pageFragment">true</property>
+      <property
+         name="x">309.0</property>
    </View>
    <TaskFlowReturn
       id="TaskFlowReturn3">
@@ -47,9 +47,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">214.24707</property>
+         name="y">212.89648</property>
       <property
-         name="x">529.0</property>
+         name="x">544.0</property>
    </TaskFlowReturn>
    <ControlFlowCase
       islink="true"
@@ -59,7 +59,7 @@
       <property
          name="fromOutcome">save</property>
       <property
-         name="sdm:polyPoints">R46,361.0,117.0459,494.0,12.597656,L50</property>
+         name="sdm:polyPoints">R46,350.0,110.34473,494.0,12.597656,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -69,6 +69,6 @@
       <property
          name="fromOutcome">cancel</property>
       <property
-         name="sdm:polyPoints">R54,361.0,124.0459,488.0,213.89648,L50</property>
+         name="sdm:polyPoints">R54,350.0,117.34473,503.0,212.5459,L50</property>
    </ControlFlowCase>
 </SDM>

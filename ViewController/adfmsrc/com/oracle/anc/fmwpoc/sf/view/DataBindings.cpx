@@ -27,6 +27,8 @@
           usageId="com_oracle_anc_fmwpoc_sf_view_contact_create_btf_contact_create_btf_CreateWithParametersPageDef"/>
     <page path="/WEB-INF/lead-edit-btf.xml#lead-edit-btf@refreshContactsLOV"
           usageId="com_oracle_anc_fmwpoc_sf_view_lead_edit_btf_lead_edit_btf_refreshContactsLOVPageDef"/>
+    <page path="/WEB-INF/account-edit-btf.xml#account-edit-btf@Commit"
+          usageId="com_oracle_anc_fmwpoc_sf_view_account_edit_btf_account_edit_btf_CommitPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_oracle_anc_fmwpoc_sf_view_mainPageDef"
@@ -53,6 +55,8 @@
           path="com.oracle.anc.fmwpoc.sf.view.pageDefs.contact_create_btf_contact_create_btf_CreateWithParametersPageDef"/>
     <page id="com_oracle_anc_fmwpoc_sf_view_lead_edit_btf_lead_edit_btf_refreshContactsLOVPageDef"
           path="com.oracle.anc.fmwpoc.sf.view.pageDefs.lead_edit_btf_lead_edit_btf_refreshContactsLOVPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_account_edit_btf_account_edit_btf_CommitPageDef"
+          path="com.oracle.anc.fmwpoc.sf.view.pageDefs.account_edit_btf_account_edit_btf_CommitPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="SalesFunnelModuleDataControl"

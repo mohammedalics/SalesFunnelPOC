@@ -56,7 +56,7 @@
         <to-activity-id id="__34">contactCreateCommit</to-activity-id>
       </control-flow-case>
       <control-flow-case id="__38">
-        <from-outcome id="__37">contactEditCommit</from-outcome>
+        <from-outcome id="__37">contactEditRollback</from-outcome>
         <to-activity-id id="__36">contactCreateRollback</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
