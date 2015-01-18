@@ -87,7 +87,7 @@
             </af:inputNumberSlider>
             <af:spacer width="10" height="21" id="s1"/>
             <af:commandButton text="Create Account" id="cb1"
-                              action="createAccount"/>
+                              action="createAccount" immediate="true"/>
             <af:commandButton text="Create Contact" id="cb2"
                               action="createContact" immediate="true"/>
           </af:panelFormLayout>
