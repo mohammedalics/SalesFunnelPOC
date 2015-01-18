@@ -17,6 +17,16 @@
           usageId="com_oracle_anc_fmwpoc_sf_view_accEditPageDef1"/>
     <page path="/WEB-INF/account-create-btf.xml#account-create-btf@CreateInsert"
           usageId="com_oracle_anc_fmwpoc_sf_view_account_create_btf_account_create_btf_CreateInsertPageDef"/>
+    <page path="/WEB-INF/lead-edit-btf.xml#lead-edit-btf@refreshAccountsLOV"
+          usageId="com_oracle_anc_fmwpoc_sf_view_lead_edit_btf_lead_edit_btf_refreshAccountsLOVPageDef"/>
+    <page path="/account/contactEdit.jsff"
+          usageId="com_oracle_anc_fmwpoc_sf_view_contactEditPageDef"/>
+    <page path="/WEB-INF/contact-create-btf.xml#contact-create-btf@CreateInsert"
+          usageId="com_oracle_anc_fmwpoc_sf_view_contact_create_btf_contact_create_btf_CreateInsertPageDef"/>
+    <page path="/WEB-INF/contact-create-btf.xml#contact-create-btf@CreateWithParameters"
+          usageId="com_oracle_anc_fmwpoc_sf_view_contact_create_btf_contact_create_btf_CreateWithParametersPageDef"/>
+    <page path="/WEB-INF/lead-edit-btf.xml#lead-edit-btf@refreshContactsLOV"
+          usageId="com_oracle_anc_fmwpoc_sf_view_lead_edit_btf_lead_edit_btf_refreshContactsLOVPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_oracle_anc_fmwpoc_sf_view_mainPageDef"
@@ -33,6 +43,16 @@
           path="account.accEditPageDef"/>
     <page id="com_oracle_anc_fmwpoc_sf_view_account_create_btf_account_create_btf_CreateInsertPageDef"
           path="com.oracle.anc.fmwpoc.sf.view.pageDefs.account_create_btf_account_create_btf_CreateInsertPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_lead_edit_btf_lead_edit_btf_refreshAccountsLOVPageDef"
+          path="com.oracle.anc.fmwpoc.sf.view.pageDefs.lead_edit_btf_lead_edit_btf_refreshAccountsLOVPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_contactEditPageDef"
+          path="account.contactEditPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_contact_create_btf_contact_create_btf_CreateInsertPageDef"
+          path="com.oracle.anc.fmwpoc.sf.view.pageDefs.contact_create_btf_contact_create_btf_CreateInsertPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_contact_create_btf_contact_create_btf_CreateWithParametersPageDef"
+          path="com.oracle.anc.fmwpoc.sf.view.pageDefs.contact_create_btf_contact_create_btf_CreateWithParametersPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_lead_edit_btf_lead_edit_btf_refreshContactsLOVPageDef"
+          path="com.oracle.anc.fmwpoc.sf.view.pageDefs.lead_edit_btf_lead_edit_btf_refreshContactsLOVPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="SalesFunnelModuleDataControl"

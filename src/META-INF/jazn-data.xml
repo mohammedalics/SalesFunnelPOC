@@ -96,6 +96,30 @@
             <description>/WEB-INF/templates/sf-btf-template.xml#sf-btf-template</description>
             <type-name-ref>TaskFlowResourceType</type-name-ref>
           </resource>
+          <resource>
+            <name>/WEB-INF/account-create-btf.xml#account-create-btf</name>
+            <display-name>account-create-btf(/WEB-INF)</display-name>
+            <description>/WEB-INF/account-create-btf.xml#account-create-btf</description>
+            <type-name-ref>TaskFlowResourceType</type-name-ref>
+          </resource>
+          <resource>
+            <name>/WEB-INF/account-edit-btf.xml#account-edit-btf</name>
+            <display-name>account-edit-btf(/WEB-INF)</display-name>
+            <description>/WEB-INF/account-edit-btf.xml#account-edit-btf</description>
+            <type-name-ref>TaskFlowResourceType</type-name-ref>
+          </resource>
+          <resource>
+            <name>/WEB-INF/contact-create-btf.xml#contact-create-btf</name>
+            <display-name>contact-create-btf(/WEB-INF)</display-name>
+            <description>/WEB-INF/contact-create-btf.xml#contact-create-btf</description>
+            <type-name-ref>TaskFlowResourceType</type-name-ref>
+          </resource>
+          <resource>
+            <name>/WEB-INF/contact-edit-btf.xml#contact-edit-btf</name>
+            <display-name>contact-edit-btf(/WEB-INF)</display-name>
+            <description>/WEB-INF/contact-edit-btf.xml#contact-edit-btf</description>
+            <type-name-ref>TaskFlowResourceType</type-name-ref>
+          </resource>
         </resources>
         <permission-sets>
           <permission-set>
@@ -135,6 +159,30 @@
                 <resource-name>/WEB-INF/templates/sf-btf-template.xml#sf-btf-template</resource-name>
                 <type-name-ref>TaskFlowResourceType</type-name-ref>
                 <display-name>sf-btf-template(/WEB-INF/templates)</display-name>
+                <actions>view</actions>
+              </member-resource>
+              <member-resource>
+                <resource-name>/WEB-INF/account-create-btf.xml#account-create-btf</resource-name>
+                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                <display-name>account-create-btf(/WEB-INF)</display-name>
+                <actions>view</actions>
+              </member-resource>
+              <member-resource>
+                <resource-name>/WEB-INF/account-edit-btf.xml#account-edit-btf</resource-name>
+                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                <display-name>account-edit-btf(/WEB-INF)</display-name>
+                <actions>view</actions>
+              </member-resource>
+              <member-resource>
+                <resource-name>/WEB-INF/contact-create-btf.xml#contact-create-btf</resource-name>
+                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                <display-name>contact-create-btf(/WEB-INF)</display-name>
+                <actions>view</actions>
+              </member-resource>
+              <member-resource>
+                <resource-name>/WEB-INF/contact-edit-btf.xml#contact-edit-btf</resource-name>
+                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                <display-name>contact-edit-btf(/WEB-INF)</display-name>
                 <actions>view</actions>
               </member-resource>
             </member-resources>

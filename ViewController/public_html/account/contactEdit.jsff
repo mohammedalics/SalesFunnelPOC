@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:pageTemplate viewId="/templates/sFfragmentTemplate.jspx"
+                   value="#{bindings.pageTemplateBinding}" id="pt1">
+    <f:facet name="toolbar">
+      <af:group id="g1">
+        <af:commandToolbarButton text="Save" id="ctb1" action="save"/>
+        <af:commandToolbarButton text="Cancel" id="ctb2" action="cancel"
+                                 immediate="true"/>
+      </af:group>
+    </f:facet>
+    <f:facet name="content">
+      <af:panelFormLayout id="pfl1">
+        <af:inputText value="#{bindings.CntTitle.inputValue}"
+                      label="#{bindings.CntTitle.hints.label}"
+                      required="#{bindings.CntTitle.hints.mandatory}"
+                      columns="#{bindings.CntTitle.hints.displayWidth}"
+                      maximumLength="#{bindings.CntTitle.hints.precision}"
+                      shortDesc="#{bindings.CntTitle.hints.tooltip}" id="it6">
+          <f:validator binding="#{bindings.CntTitle.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.CntName.inputValue}"
+                      label="#{bindings.CntName.hints.label}"
+                      required="#{bindings.CntName.hints.mandatory}"
+                      columns="#{bindings.CntName.hints.displayWidth}"
+                      maximumLength="#{bindings.CntName.hints.precision}"
+                      shortDesc="#{bindings.CntName.hints.tooltip}" id="it1">
+          <f:validator binding="#{bindings.CntName.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.CntJobTitle.inputValue}"
+                      label="#{bindings.CntJobTitle.hints.label}"
+                      required="#{bindings.CntJobTitle.hints.mandatory}"
+                      columns="#{bindings.CntJobTitle.hints.displayWidth}"
+                      maximumLength="#{bindings.CntJobTitle.hints.precision}"
+                      shortDesc="#{bindings.CntJobTitle.hints.tooltip}"
+                      id="it3">
+          <f:validator binding="#{bindings.CntJobTitle.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.CntPhone.inputValue}"
+                      label="#{bindings.CntPhone.hints.label}"
+                      required="#{bindings.CntPhone.hints.mandatory}"
+                      columns="#{bindings.CntPhone.hints.displayWidth}"
+                      maximumLength="#{bindings.CntPhone.hints.precision}"
+                      shortDesc="#{bindings.CntPhone.hints.tooltip}" id="it5">
+          <f:validator binding="#{bindings.CntPhone.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.CntMobile.inputValue}"
+                      label="#{bindings.CntMobile.hints.label}"
+                      required="#{bindings.CntMobile.hints.mandatory}"
+                      columns="#{bindings.CntMobile.hints.displayWidth}"
+                      maximumLength="#{bindings.CntMobile.hints.precision}"
+                      shortDesc="#{bindings.CntMobile.hints.tooltip}" id="it2">
+          <f:validator binding="#{bindings.CntMobile.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.CntEmail.inputValue}"
+                      label="#{bindings.CntEmail.hints.label}"
+                      required="#{bindings.CntEmail.hints.mandatory}"
+                      columns="#{bindings.CntEmail.hints.displayWidth}"
+                      maximumLength="#{bindings.CntEmail.hints.precision}"
+                      shortDesc="#{bindings.CntEmail.hints.tooltip}" id="it7">
+          <f:validator binding="#{bindings.CntEmail.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.CntFax.inputValue}"
+                      label="#{bindings.CntFax.hints.label}"
+                      required="#{bindings.CntFax.hints.mandatory}"
+                      columns="#{bindings.CntFax.hints.displayWidth}"
+                      maximumLength="#{bindings.CntFax.hints.precision}"
+                      shortDesc="#{bindings.CntFax.hints.tooltip}" id="it8">
+          <f:validator binding="#{bindings.CntFax.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.CntNotes.inputValue}"
+                      label="#{bindings.CntNotes.hints.label}"
+                      required="#{bindings.CntNotes.hints.mandatory}"
+                      columns="#{bindings.CntNotes.hints.displayWidth}"
+                      maximumLength="#{bindings.CntNotes.hints.precision}"
+                      shortDesc="#{bindings.CntNotes.hints.tooltip}" id="it4">
+          <f:validator binding="#{bindings.CntNotes.validator}"/>
+        </af:inputText>
+      </af:panelFormLayout>
+    </f:facet>
+    <f:attribute name="pageTitle" value="Contact"/>
+  </af:pageTemplate>
+</jsp:root>

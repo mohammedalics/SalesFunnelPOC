@@ -15,7 +15,7 @@
       <af:panelSplitter id="ps1" orientation="vertical"
                         inlineStyle="width:748px; height:353px;">
         <f:facet name="first">
-          <af:panelFormLayout id="pfl1">
+          <af:panelFormLayout id="pfl1" maxColumns="2" rows="7">
             <af:inputText value="#{bindings.OppTitle.inputValue}"
                           label="#{bindings.OppTitle.hints.label}"
                           required="#{bindings.OppTitle.hints.mandatory}"
@@ -85,6 +85,11 @@
               <af:convertNumber groupingUsed="false"
                                 pattern="#{bindings.OppProbability.format}"/>
             </af:inputNumberSlider>
+            <af:spacer width="10" height="21" id="s1"/>
+            <af:commandButton text="Create Account" id="cb1"
+                              action="createAccount"/>
+            <af:commandButton text="Create Contact" id="cb2"
+                              action="createContact" immediate="true"/>
           </af:panelFormLayout>
         </f:facet>
         <f:facet name="second">

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="contactEditPageDef"
+                Package="account">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="templates.sFfragmentTemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="ContactsView1" RangeSize="25"
+              DataControl="SalesFunnelModuleDataControl"
+              id="ContactsView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ContactsView1Iterator" id="CntTitle">
+      <AttrNames>
+        <Item Value="CntTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContactsView1Iterator" id="CntName">
+      <AttrNames>
+        <Item Value="CntName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContactsView1Iterator" id="CntJobTitle">
+      <AttrNames>
+        <Item Value="CntJobTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContactsView1Iterator" id="CntPhone">
+      <AttrNames>
+        <Item Value="CntPhone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContactsView1Iterator" id="CntMobile">
+      <AttrNames>
+        <Item Value="CntMobile"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContactsView1Iterator" id="CntEmail">
+      <AttrNames>
+        <Item Value="CntEmail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContactsView1Iterator" id="CntFax">
+      <AttrNames>
+        <Item Value="CntFax"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContactsView1Iterator" id="CntNotes">
+      <AttrNames>
+        <Item Value="CntNotes"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

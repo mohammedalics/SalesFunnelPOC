@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="contact-create-btf">
+    <template-reference>
+      <document id="__2">/WEB-INF/templates/sf-btf-template.xml</document>
+      <id id="__1">sf-btf-template</id>
+    </template-reference>
+    <default-activity id="__9">CreateWithParameters</default-activity>
+    <transaction id="__5">
+      <new-transaction/>
+    </transaction>
+    <data-control-scope id="__6">
+      <isolated/>
+    </data-control-scope>
+    <input-parameter-definition id="__4">
+      <name id="__3">accId</name>
+      <value>#{pageFlowScope.accId}</value>
+      <class>oracle.jbo.domain.Number</class>
+      <required/>
+    </input-parameter-definition>
+    <method-call id="CreateWithParameters">
+      <method>#{bindings.CreateWithParams.execute}</method>
+      <outcome id="__10">
+        <fixed-outcome>CreateWithParams</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-return id="contactCreateCommit">
+      <outcome id="__16">
+        <name>contactCreateCommit</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="contactCreateRollback">
+      <outcome id="__17">
+        <name>contactCreateRollback</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-call id="contact-edit-btf">
+      <task-flow-reference>
+        <document>/WEB-INF/contact-edit-btf.xml</document>
+        <id>contact-edit-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule id="__26">
+      <from-activity-id id="__27">CreateWithParameters</from-activity-id>
+      <control-flow-case id="__29">
+        <from-outcome id="__28">CreateWithParams</from-outcome>
+        <to-activity-id id="__30">contact-edit-btf</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__31">
+      <from-activity-id id="__32">contact-edit-btf</from-activity-id>
+      <control-flow-case id="__35">
+        <from-outcome id="__33">contactEditCommit</from-outcome>
+        <to-activity-id id="__34">contactCreateCommit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__38">
+        <from-outcome id="__37">contactEditCommit</from-outcome>
+        <to-activity-id id="__36">contactCreateRollback</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

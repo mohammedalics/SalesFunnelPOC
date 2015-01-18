@@ -17,9 +17,9 @@
       <property
          name="y">228.89648</property>
       <property
-         name="pageFragment">true</property>
-      <property
          name="x">313.0</property>
+      <property
+         name="pageFragment">true</property>
    </View>
    <TaskFlowReturn
       id="TaskFlowReturn3">
@@ -97,5 +97,98 @@
          name="fromOutcome">createAccount</property>
       <property
          name="sdm:polyPoints">B50,313.0,282.5459,314.56543,361.54004,T50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall9">
+      <property
+         name="activityId">refreshAccountsLOV</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>refreshAccountsLOV&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">415.0459</property>
+      <property
+         name="x">78.359375</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase11"
+      from="TaskFlowCall7"
+      to="MethodCall9">
+      <property
+         name="fromOutcome">accCreateCommit</property>
+      <property
+         name="sdm:polyPoints">L50,273.56543,415.54004,119.359375,414.6953,R50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase12"
+      from="MethodCall9"
+      to="View2">
+      <property
+         name="fromOutcome">refreshAccountsLOV</property>
+      <property
+         name="sdm:polyPoints">T50,78.359375,360.6953,272.0,232.0459,L54</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall13">
+      <property
+         name="taskFlowId">contact-create-btf</property>
+      <property
+         name="activityId">contact-create-btf</property>
+      <property
+         name="documentReference">/WEB-INF/contact-create-btf.xml</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>contact-create-btf&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">56.99414</property>
+      <property
+         name="x">314.8955</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase14"
+      from="View2"
+      to="TaskFlowCall13">
+      <property
+         name="fromOutcome">createContact</property>
+      <property
+         name="sdm:polyPoints">T50,313.0,174.5459,314.8955,110.643555,B50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall15">
+      <property
+         name="activityId">refreshContactsLOV</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>refreshContactsLOV&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">134.74707</property>
+      <property
+         name="x">78.35742</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase16"
+      from="MethodCall15"
+      to="View2">
+      <property
+         name="fromOutcome">refreshContactsLOV</property>
+      <property
+         name="sdm:polyPoints">R54,119.35742,137.89648,272.0,225.0459,L46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase17"
+      from="TaskFlowCall13"
+      to="MethodCall15">
+      <property
+         name="fromOutcome">contactCreateCommit</property>
+      <property
+         name="sdm:polyPoints">L50,273.8955,56.643555,119.35742,130.89648,R46</property>
    </ControlFlowCase>
 </SDM>

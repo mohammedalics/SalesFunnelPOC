@@ -49,5 +49,10 @@
         <Item Value="OppDescription"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="OpportunitiesView1Iterator" id="AccId">
+      <AttrNames>
+        <Item Value="AccId"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

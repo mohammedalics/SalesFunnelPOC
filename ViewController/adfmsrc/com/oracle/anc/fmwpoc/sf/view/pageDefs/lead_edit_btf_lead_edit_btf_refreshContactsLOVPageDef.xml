@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93"
+                id="lead_edit_btf_lead_edit_btf_refreshContactsLOVPageDef"
+                Package="com.oracle.anc.fmwpoc.sf.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <action id="refreshContactsLOV" RequiresUpdateModel="true"
+            Action="invokeMethod" MethodName="refreshContactsLOV"
+            IsViewObjectMethod="true" DataControl="SalesFunnelModuleDataControl"
+            InstanceName="SalesFunnelModuleDataControl.OpportunitiesView1"/>
+  </bindings>
+</pageDefinition>

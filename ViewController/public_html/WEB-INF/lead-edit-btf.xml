@@ -33,6 +33,28 @@
         <id>account-create-btf</id>
       </task-flow-reference>
     </task-flow-call>
+    <method-call id="refreshAccountsLOV">
+      <method>#{bindings.refreshAccountsLOV.execute}</method>
+      <outcome id="__19">
+        <fixed-outcome>refreshAccountsLOV</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-call id="contact-create-btf">
+      <task-flow-reference>
+        <document>/WEB-INF/contact-create-btf.xml</document>
+        <id>contact-create-btf</id>
+      </task-flow-reference>
+      <input-parameter id="__38">
+        <name>accId</name>
+        <value>#{data.com_oracle_anc_fmwpoc_sf_view_leadEditPageDef.AccId.inputValue}</value>
+      </input-parameter>
+    </task-flow-call>
+    <method-call id="refreshContactsLOV">
+      <method>#{bindings.refreshContactsLOV.execute}</method>
+      <outcome id="__39">
+        <fixed-outcome>refreshContactsLOV</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__6">
       <from-activity-id id="__7">leadEdit</from-activity-id>
       <control-flow-case id="__8">
@@ -46,6 +68,38 @@
       <control-flow-case id="__16">
         <from-outcome id="__18">createAccount</from-outcome>
         <to-activity-id id="__17">account-create-btf</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__35">
+        <from-outcome id="__37">createContact</from-outcome>
+        <to-activity-id id="__36">contact-create-btf</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__25">
+      <from-activity-id id="__26">account-create-btf</from-activity-id>
+      <control-flow-case id="__27">
+        <from-outcome id="__28">accCreateCommit</from-outcome>
+        <to-activity-id id="__29">refreshAccountsLOV</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__30">
+      <from-activity-id id="__31">refreshAccountsLOV</from-activity-id>
+      <control-flow-case id="__32">
+        <from-outcome id="__34">refreshAccountsLOV</from-outcome>
+        <to-activity-id id="__33">leadEdit</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__40">
+      <from-activity-id id="__41">refreshContactsLOV</from-activity-id>
+      <control-flow-case id="__43">
+        <from-outcome id="__42">refreshContactsLOV</from-outcome>
+        <to-activity-id id="__44">leadEdit</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__45">
+      <from-activity-id id="__46">contact-create-btf</from-activity-id>
+      <control-flow-case id="__47">
+        <from-outcome id="__49">contactCreateCommit</from-outcome>
+        <to-activity-id id="__48">refreshContactsLOV</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>
