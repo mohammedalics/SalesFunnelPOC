@@ -10,6 +10,12 @@
     <iterator Binds="OpportunitiesView4" RangeSize="-1"
               DataControl="SalesFunnelModuleDataControl"
               id="OpportunitiesView4Iterator"/>
+    <iterator Binds="EmpCurrentQuarterReportView" RangeSize="1"
+              DataControl="SalesFunnelModuleDataControl"
+              id="EmpCurrentQuarterReportViewIterator"/>
+    <iterator Binds="EmployeeNextQuarterReportView" RangeSize="1"
+              DataControl="SalesFunnelModuleDataControl"
+              id="EmployeeNextQuarterReportViewIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="EmployeesView1Iterator" id="EmpName">
@@ -60,5 +66,33 @@
         </groups>
       </graphDataMap>
     </graph>
+    <gauge IterBinding="EmpCurrentQuarterReportViewIterator"
+           id="EmpCurrentQuarterReportView"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="DIAL">
+      <gaugeDataMap>
+        <thresholds>
+          <item value="LowTarget"/>
+          <item value="MediumTarget"/>
+          <item value="EmpQuarterlyTargetAmount"/>
+        </thresholds>
+        <item type="metric" value="ClosedAmount"/>
+        <item type="minimum" value="0" valueType="literal"/>
+        <item type="maximum" value="MaxTarget"/>
+      </gaugeDataMap>
+    </gauge>
+    <gauge IterBinding="EmployeeNextQuarterReportViewIterator"
+           id="EmployeeNextQuarterReportView"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="DIAL">
+      <gaugeDataMap>
+        <thresholds>
+          <item value="LowTarget"/>
+          <item value="MediumTarget"/>
+          <item value="EmpQuarterlyTargetAmount"/>
+        </thresholds>
+        <item type="metric" value="ClosedAmount"/>
+        <item type="minimum" value="0" valueType="literal"/>
+        <item type="maximum" value="MaxTarget"/>
+      </gaugeDataMap>
+    </gauge>
   </bindings>
 </pageDefinition>

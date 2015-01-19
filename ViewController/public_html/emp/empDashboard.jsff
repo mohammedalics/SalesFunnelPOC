@@ -91,7 +91,30 @@
                 <f:facet name="end">
                   <af:panelTabbed id="pt2">
                     <af:showDetailItem text="Target" id="sdi2"
-                                       stretchChildren="first"/>
+                                       stretchChildren="first">
+                      <dvt:gauge id="gauge1"
+                                 value="#{bindings.EmpCurrentQuarterReportView.gaugeModel}"
+                                 gaugeType="DIAL" dynamicResize="DYNAMIC_SIZE">
+                        <dvt:gaugeBackground>
+                          <dvt:specialEffects/>
+                        </dvt:gaugeBackground>
+                        <dvt:thresholdSet>
+                          <dvt:threshold text="Low" fillColor="#d62800"/>
+                          <dvt:threshold text="Medium" fillColor="#ffcf21"/>
+                          <dvt:threshold fillColor="#00a500" text="Target"/>
+                          <dvt:threshold text="High" fillColor="#0000ff"/>
+                        </dvt:thresholdSet>
+                        <dvt:gaugeFrame/>
+                        <dvt:indicator/>
+                        <dvt:indicatorBase/>
+                        <dvt:gaugePlotArea/>
+                        <dvt:tickLabel/>
+                        <dvt:tickMark/>
+                        <dvt:topLabel position="LP_NONE"/>
+                        <dvt:bottomLabel/>
+                        <dvt:metricLabel position="LP_WITH_BOTTOM_LABEL"/>
+                      </dvt:gauge>
+                    </af:showDetailItem>
                   </af:panelTabbed>
                 </f:facet>
                 <f:facet name="top"/>
@@ -131,6 +154,31 @@
                 <dvt:y1Axis/>
                 <dvt:legendArea automaticPlacement="AP_NEVER"/>
               </dvt:bubbleGraph>
+            </af:showDetailItem>
+            <af:showDetailItem text="Next Quarter Target" id="sdi4"
+                               stretchChildren="first">
+              <dvt:gauge id="gauge2"
+                         value="#{bindings.EmployeeNextQuarterReportView.gaugeModel}"
+                         gaugeType="DIAL" dynamicResize="DYNAMIC_SIZE">
+                <dvt:gaugeBackground>
+                  <dvt:specialEffects/>
+                </dvt:gaugeBackground>
+                <dvt:thresholdSet>
+                  <dvt:threshold text="Low" fillColor="#d62800"/>
+                  <dvt:threshold text="Medium" fillColor="#ffcf21"/>
+                  <dvt:threshold fillColor="#00a500"/>
+                  <dvt:threshold text="High" fillColor="#0000d6"/>
+                </dvt:thresholdSet>
+                <dvt:gaugeFrame/>
+                <dvt:indicator/>
+                <dvt:indicatorBase/>
+                <dvt:gaugePlotArea/>
+                <dvt:tickLabel/>
+                <dvt:tickMark/>
+                <dvt:topLabel position="LP_NONE"/>
+                <dvt:bottomLabel/>
+                <dvt:metricLabel position="LP_WITH_BOTTOM_LABEL"/>
+              </dvt:gauge>
             </af:showDetailItem>
           </af:panelTabbed>
         </f:facet>

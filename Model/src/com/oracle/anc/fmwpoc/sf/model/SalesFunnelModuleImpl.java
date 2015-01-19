@@ -186,4 +186,20 @@ public class SalesFunnelModuleImpl extends ApplicationModuleImpl {
         super.prepareSession(session);
         storeUserEmpIdInSession();
     }
+
+    /**
+     * Container's getter for EmpCurrentQuarterReportView.
+     * @return EmpCurrentQuarterReportView
+     */
+    public ViewObjectImpl getEmpCurrentQuarterReportView() {
+        return (ViewObjectImpl)findViewObject("EmpCurrentQuarterReportView");
+    }
+
+    /**
+     * Container's getter for EmployeeNextQuarterReportView1.
+     * @return EmployeeNextQuarterReportView1
+     */
+    public ViewObjectImpl getEmployeeNextQuarterReportView() {
+        return (ViewObjectImpl)findViewObject("EmployeeNextQuarterReportView");
+    }
 }

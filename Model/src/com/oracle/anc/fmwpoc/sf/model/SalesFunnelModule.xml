@@ -46,6 +46,30 @@
   <ViewUsage
     Name="OpportunitiesView4"
     ViewObjectName="com.oracle.anc.fmwpoc.sf.model.views.OpportunitiesView"/>
+  <ViewUsage
+    Name="EmpCurrentQuarterReportView"
+    ViewObjectName="com.oracle.anc.fmwpoc.sf.model.views.bi.EmpQuarterReportView">
+    <ViewCriteriaUsage
+      Name="QuarterVC"
+      FullName="com.oracle.anc.fmwpoc.sf.model.views.bi.EmpQuarterReportView.QuarterVC"/>
+    <ParameterMap>
+      <PIMap Variable="pQuarter">
+        <TransientExpression><![CDATA[adf.currentDate.format("yyyy\\")+((adf.currentDate.getMonth()/3).setScale(0,1)+1)]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewUsage>
+  <ViewUsage
+    Name="EmployeeNextQuarterReportView"
+    ViewObjectName="com.oracle.anc.fmwpoc.sf.model.views.bi.EmpQuarterReportView">
+    <ViewCriteriaUsage
+      Name="QuarterVC"
+      FullName="com.oracle.anc.fmwpoc.sf.model.views.bi.EmpQuarterReportView.QuarterVC"/>
+    <ParameterMap>
+      <PIMap Variable="pQuarter">
+        <TransientExpression><![CDATA[adf.currentDate.format("yyyy\\")+((adf.currentDate.getMonth()/3).setScale(0,1)+1)]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewUsage>
   <ViewLinkUsage
     Name="ContactsContactsFk1Link1"
     ViewLinkObjectName="com.oracle.anc.fmwpoc.sf.model.views.ContactsContactsFk1Link"

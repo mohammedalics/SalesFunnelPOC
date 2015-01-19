@@ -33,6 +33,14 @@
     </DesignTime>
   </Containee>
   <Containee
+    Name="bi"
+    PackageName="com.oracle.anc.fmwpoc.sf.model.views.bi"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
     Name="lov"
     PackageName="com.oracle.anc.fmwpoc.sf.model.views.lov"
     ObjectType="JboPackage">
