@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="hierarchFunnelPageDef" Package="emp">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmployeesView1" RangeSize="25"
+              DataControl="SalesFunnelModuleDataControl"
+              id="EmployeesView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmployeesView1Iterator" id="EmployeesView1">
+      <nodeDefinition DefName="com.oracle.anc.fmwpoc.sf.model.views.EmployeesView">
+        <AttrNames>
+          <Item Value="EmpName"/>
+          <Item Value="EmpJobTitle"/>
+          <Item Value="EmpId"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="EmployeesView"/>
+        </Accessors>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

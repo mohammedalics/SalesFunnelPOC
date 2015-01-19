@@ -39,6 +39,10 @@
           usageId="com_oracle_anc_fmwpoc_sf_view_empDashboardPageDef"/>
     <page path="/WEB-INF/lead-edit-btf.xml#lead-edit-btf@SetCurrentRowWithKey"
           usageId="com_oracle_anc_fmwpoc_sf_view_lead_edit_btf_lead_edit_btf_SetCurrentRowWithKeyPageDef"/>
+    <page path="/WEB-INF/emp-funnel-btf.xml#emp-funnel-btf@ExecuteWithParams"
+          usageId="com_oracle_anc_fmwpoc_sf_view_emp_funnel_btf_emp_funnel_btf_ExecuteWithParamsPageDef"/>
+    <page path="/emp/hierarchFunnel.jsff"
+          usageId="com_oracle_anc_fmwpoc_sf_view_hierarchFunnelPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_oracle_anc_fmwpoc_sf_view_mainPageDef"
@@ -73,6 +77,10 @@
           path="emp.empDashboardPageDef"/>
     <page id="com_oracle_anc_fmwpoc_sf_view_lead_edit_btf_lead_edit_btf_SetCurrentRowWithKeyPageDef"
           path="com.oracle.anc.fmwpoc.sf.view.pageDefs.lead_edit_btf_lead_edit_btf_SetCurrentRowWithKeyPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_emp_funnel_btf_emp_funnel_btf_ExecuteWithParamsPageDef"
+          path="com.oracle.anc.fmwpoc.sf.view.pageDefs.emp_funnel_btf_emp_funnel_btf_ExecuteWithParamsPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_hierarchFunnelPageDef"
+          path="emp.hierarchFunnelPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="SalesFunnelModuleDataControl"

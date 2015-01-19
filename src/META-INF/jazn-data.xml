@@ -126,6 +126,12 @@
             <description>/WEB-INF/emp-dashboard-btf.xml#emp-dashboard-btf</description>
             <type-name-ref>TaskFlowResourceType</type-name-ref>
           </resource>
+          <resource>
+            <name>/WEB-INF/emp-funnel-btf.xml#emp-funnel-btf</name>
+            <display-name>emp-funnel-btf(/WEB-INF)</display-name>
+            <description>/WEB-INF/emp-funnel-btf.xml#emp-funnel-btf</description>
+            <type-name-ref>TaskFlowResourceType</type-name-ref>
+          </resource>
         </resources>
         <permission-sets>
           <permission-set>
@@ -195,6 +201,12 @@
                 <resource-name>/WEB-INF/emp-dashboard-btf.xml#emp-dashboard-btf</resource-name>
                 <type-name-ref>TaskFlowResourceType</type-name-ref>
                 <display-name>emp-dashboard-btf(/WEB-INF)</display-name>
+                <actions>view</actions>
+              </member-resource>
+              <member-resource>
+                <resource-name>/WEB-INF/emp-funnel-btf.xml#emp-funnel-btf</resource-name>
+                <type-name-ref>TaskFlowResourceType</type-name-ref>
+                <display-name>emp-funnel-btf(/WEB-INF)</display-name>
                 <actions>view</actions>
               </member-resource>
             </member-resources>

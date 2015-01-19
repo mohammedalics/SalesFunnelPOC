@@ -24,7 +24,14 @@
                 </af:navigationPane>
               </af:showDetailItem>
               <af:showDetailItem text="Sales Intelligence" id="sdi2"
-                                 disclosed="true"/>
+                                 disclosed="true">
+                <af:navigationPane id="np2">
+                  <af:commandNavigationItem text="Hierarchical Funnel"
+                                            id="cni3"
+                                            actionListener="#{backingBeanScope.MainBean.launchHierarchicalFunnel}"/>
+                                            
+                </af:navigationPane>
+              </af:showDetailItem>
             </af:panelAccordion>
           </f:facet>
           <f:facet name="globalLinks">

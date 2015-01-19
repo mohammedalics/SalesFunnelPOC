@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="emp-funnel-btf">
+    <template-reference>
+      <document id="__1">/WEB-INF/templates/sf-btf-template.xml</document>
+      <id id="__2">sf-btf-template</id>
+    </template-reference>
+    <default-activity id="__3">ExecuteWithParams</default-activity>
+    <method-call id="ExecuteWithParams">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome id="__4">
+        <fixed-outcome>ExecuteWithParams</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="hierarchFunnel">
+      <page>/emp/hierarchFunnel.jsff</page>
+    </view>
+    <control-flow-rule id="__5">
+      <from-activity-id id="__6">ExecuteWithParams</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome id="__8">ExecuteWithParams</from-outcome>
+        <to-activity-id id="__9">hierarchFunnel</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

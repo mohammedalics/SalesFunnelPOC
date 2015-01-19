@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <af:decorativeBox id="db1" theme="medium">
+    <f:facet name="center">
+      <dvt:hierarchyViewer id="hv1" var="node"
+                           value="#{bindings.EmployeesView1.treeModel}"
+                           selectionListener="#{bindings.EmployeesView1.treeModel.makeCurrent}"
+                           layout="hier_vert_top"
+                           levelFetchSize="#{bindings.EmployeesView1.rangeSize}"
+                           inlineStyle="width:100%; height:600px;">
+        <dvt:link linkType="orthogonalRounded" id="l1"/>
+        <dvt:node type="com.oracle.anc.fmwpoc.sf.model.views.EmployeesView"
+                  width="233" height="233" id="n1">
+          <f:facet name="zoom100">
+            <af:panelGroupLayout id="pgl3" layout="vertical"
+                                 inlineStyle="width:100%; height:100px; padding:3px;">
+              <af:panelGroupLayout inlineStyle="width:100%;"
+                                   layout="horizontal" valign="middle"
+                                   id="pgl1">
+                <af:panelGroupLayout id="pgl4">
+                  <af:image source="/imageservlet?empId=#{node.EmpId}" id="i1"
+                            inlineStyle="width:80px;height:80px;"/>
+                </af:panelGroupLayout>
+                <af:spacer height="5" id="s1"/>
+                <af:panelGroupLayout layout="vertical" id="pgl2">
+                  <af:commandLink text="#{node.EmpName}"
+                                 styleClass="AFHVNodeTitleTextStyle" id="ot2"
+                                  inlineStyle="font-size:14px;color:#383A47;font-weight:bold;"/>
+                  <af:outputText value="#{node.EmpJobTitle}"
+                                 id="ot1"
+                                 inlineStyle="font-style:italic;font-size:12px;color:#383A47"/>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+        </dvt:node>
+      </dvt:hierarchyViewer>
+    </f:facet>
+    <f:facet name="top"/>
+  </af:decorativeBox>
+</jsp:root>
