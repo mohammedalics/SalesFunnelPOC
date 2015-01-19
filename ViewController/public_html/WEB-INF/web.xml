@@ -118,6 +118,10 @@
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
+  <servlet>
+    <servlet-name>ImageServlet</servlet-name>
+    <servlet-class>com.oracle.anc.fmwpoc.sf.view.servlets.ImageServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>Faces Servlet</servlet-name>
     <url-pattern>/faces/*</url-pattern>
@@ -157,6 +161,10 @@
   <servlet-mapping>
     <servlet-name>adfAuthentication</servlet-name>
     <url-pattern>/adfAuthentication</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImageServlet</servlet-name>
+    <url-pattern>/imageservlet/*</url-pattern>
   </servlet-mapping>
   <mime-mapping>
     <extension>swf</extension>

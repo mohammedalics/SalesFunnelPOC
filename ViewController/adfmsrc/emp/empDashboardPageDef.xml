@@ -94,5 +94,10 @@
         <item type="maximum" value="MaxTarget"/>
       </gaugeDataMap>
     </gauge>
+    <attributeValues IterBinding="EmployeesView1Iterator" id="EmpId">
+      <AttrNames>
+        <Item Value="EmpId"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

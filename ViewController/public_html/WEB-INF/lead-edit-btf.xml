@@ -5,13 +5,18 @@
       <document id="__2">/WEB-INF/templates/sf-btf-template.xml</document>
       <id id="__1">sf-btf-template</id>
     </template-reference>
-    <default-activity id="__3">leadEdit</default-activity>
+    <default-activity id="__3">oppId</default-activity>
     <transaction id="__14">
       <requires-transaction/>
     </transaction>
     <data-control-scope id="__15">
       <shared/>
     </data-control-scope>
+    <input-parameter-definition id="__20">
+      <name id="__21">oppId</name>
+      <value>#{pageFlowScope.oppId}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
     <view id="leadEdit">
       <page>/lead/leadEdit.jsff</page>
     </view>
@@ -53,6 +58,19 @@
       <method>#{bindings.refreshContactsLOV.execute}</method>
       <outcome id="__39">
         <fixed-outcome>refreshContactsLOV</fixed-outcome>
+      </outcome>
+    </method-call>
+    <router id="oppId">
+      <case>
+        <expression>#{pageFlowScope.oppId != null}</expression>
+        <outcome id="__52">setRowByKeyValue</outcome>
+      </case>
+      <default-outcome>currentRow</default-outcome>
+    </router>
+    <method-call id="SetCurrentRowWithKey">
+      <method>#{bindings.setCurrentRowWithKey.execute}</method>
+      <outcome id="__53">
+        <fixed-outcome>setCurrentRowWithKey</fixed-outcome>
       </outcome>
     </method-call>
     <control-flow-rule id="__6">
@@ -100,6 +118,24 @@
       <control-flow-case id="__47">
         <from-outcome id="__49">contactCreateCommit</from-outcome>
         <to-activity-id id="__48">refreshContactsLOV</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__22">
+      <from-activity-id id="__23">oppId</from-activity-id>
+      <control-flow-case id="__50">
+        <from-outcome id="__51">currentRow</from-outcome>
+        <to-activity-id id="__24">leadEdit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__56">
+        <from-outcome id="__54">setRowByKeyValue</from-outcome>
+        <to-activity-id id="__55">SetCurrentRowWithKey</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__57">
+      <from-activity-id id="__58">SetCurrentRowWithKey</from-activity-id>
+      <control-flow-case id="__59">
+        <from-outcome id="__60">setCurrentRowWithKey</from-outcome>
+        <to-activity-id id="__61">leadEdit</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>

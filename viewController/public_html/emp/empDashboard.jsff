@@ -11,12 +11,27 @@
             <f:facet name="first">
               <af:panelBox text="Employee" id="pb2" showDisclosure="false">
                 <f:facet name="toolbar"/>
-                <af:panelFormLayout id="pfl1">
-                  <af:outputText value="#{bindings.EmpName.inputValue}"
-                                 id="ot1"/>
-                  <af:outputText value="#{bindings.EmpJobTitle.inputValue}"
-                                 id="ot2"/>
-                </af:panelFormLayout>
+                <af:panelStretchLayout id="psl2">
+                  <f:facet name="bottom">
+                    <af:panelGroupLayout layout="vertical"
+                                         xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                         id="pgl1">
+                      <af:outputText value="#{bindings.EmpName.inputValue}"
+                                     id="ot1"
+                                     inlineStyle="font-size:16px;color:#383A47"/>
+                      <af:outputText value="#{bindings.EmpJobTitle.inputValue}"
+                                     id="ot2"
+                                     inlineStyle="font-size:11px;font-style:italic;color:#383A47"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <f:facet name="center">
+                    <af:image source="/imageservlet?empId=#{bindings.EmpId.inputValue}"
+                              id="i1" inlineStyle="width:100%; height:auto;"/>
+                  </f:facet>
+                  <f:facet name="start"/>
+                  <f:facet name="end"/>
+                  <f:facet name="top"/>
+                </af:panelStretchLayout>
               </af:panelBox>
             </f:facet>
             <f:facet name="second">
@@ -26,6 +41,8 @@
                   <af:panelBox text="Leads" id="pb1" showDisclosure="false">
                     <f:facet name="toolbar">
                       <af:toolbar id="t1">
+                        <af:commandToolbarButton text="Edit"
+                                                 id="ctb2" action="edit"/>
                         <af:commandToolbarButton text="Exit"
                                                  id="ctb1" action="exit"/>
                       </af:toolbar>

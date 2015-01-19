@@ -37,6 +37,8 @@
           usageId="com_oracle_anc_fmwpoc_sf_view_emp_dashboard_btf_emp_dashboard_btf_ExecuteWithParamsPageDef"/>
     <page path="/emp/empDashboard.jsff"
           usageId="com_oracle_anc_fmwpoc_sf_view_empDashboardPageDef"/>
+    <page path="/WEB-INF/lead-edit-btf.xml#lead-edit-btf@SetCurrentRowWithKey"
+          usageId="com_oracle_anc_fmwpoc_sf_view_lead_edit_btf_lead_edit_btf_SetCurrentRowWithKeyPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_oracle_anc_fmwpoc_sf_view_mainPageDef"
@@ -69,6 +71,8 @@
           path="com.oracle.anc.fmwpoc.sf.view.pageDefs.emp_dashboard_btf_emp_dashboard_btf_ExecuteWithParamsPageDef"/>
     <page id="com_oracle_anc_fmwpoc_sf_view_empDashboardPageDef"
           path="emp.empDashboardPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_lead_edit_btf_lead_edit_btf_SetCurrentRowWithKeyPageDef"
+          path="com.oracle.anc.fmwpoc.sf.view.pageDefs.lead_edit_btf_lead_edit_btf_SetCurrentRowWithKeyPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="SalesFunnelModuleDataControl"

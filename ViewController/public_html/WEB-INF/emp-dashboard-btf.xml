@@ -20,11 +20,25 @@
         <fixed-outcome>ExecuteWithParams</fixed-outcome>
       </outcome>
     </method-call>
+    <task-flow-call id="lead-edit-btf">
+      <task-flow-reference>
+        <document>/WEB-INF/lead-edit-btf.xml</document>
+        <id>lead-edit-btf</id>
+      </task-flow-reference>
+      <input-parameter id="__19">
+        <name>oppId</name>
+        <value>#{data.com_oracle_anc_fmwpoc_sf_view_empDashboardPageDef.OpportunitiesView4Iterator.currentRowWithKeyValue}</value>
+      </input-parameter>
+    </task-flow-call>
     <control-flow-rule id="__5">
       <from-activity-id id="__6">empDashboard</from-activity-id>
       <control-flow-case id="__8">
         <from-outcome id="__9">exit</from-outcome>
         <to-activity-id id="__7">dashboardReturn</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome id="__18">edit</from-outcome>
+        <to-activity-id id="__17">lead-edit-btf</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__11">
