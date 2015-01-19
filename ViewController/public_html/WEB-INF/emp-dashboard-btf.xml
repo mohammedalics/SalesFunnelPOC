@@ -5,7 +5,12 @@
       <document id="__2">/WEB-INF/templates/sf-btf-template.xml</document>
       <id id="__1">sf-btf-template</id>
     </template-reference>
-    <default-activity id="__16">ExecuteWithParams</default-activity>
+    <default-activity id="__16">loadEmp</default-activity>
+    <input-parameter-definition id="__20">
+      <name id="__21">empId</name>
+      <value>#{pageFlowScope.empId}</value>
+      <class>oracle.jbo.domain.Number</class>
+    </input-parameter-definition>
     <view id="empDashboard">
       <page>/emp/empDashboard.jsff</page>
     </view>
@@ -30,6 +35,19 @@
         <value>#{data.com_oracle_anc_fmwpoc_sf_view_empDashboardPageDef.OpportunitiesView4Iterator.currentRowWithKeyValue}</value>
       </input-parameter>
     </task-flow-call>
+    <router id="loadEmp">
+      <case>
+        <expression>#{pageFlowScope.empId != null}</expression>
+        <outcome id="__37">paramEmp</outcome>
+      </case>
+      <default-outcome>currentRow</default-outcome>
+    </router>
+    <method-call id="ExecuteWithParams1">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome id="__36">
+        <fixed-outcome>ExecuteWithParams</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__5">
       <from-activity-id id="__6">empDashboard</from-activity-id>
       <control-flow-case id="__8">
@@ -46,6 +64,24 @@
       <control-flow-case id="__14">
         <from-outcome id="__15">ExecuteWithParams</from-outcome>
         <to-activity-id id="__13">empDashboard</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__31">
+      <from-activity-id id="__32">loadEmp</from-activity-id>
+      <control-flow-case id="__34">
+        <from-outcome id="__35">currentRow</from-outcome>
+        <to-activity-id id="__33">ExecuteWithParams</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__38">
+        <from-outcome id="__40">paramEmp</from-outcome>
+        <to-activity-id id="__39">ExecuteWithParams1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__41">
+      <from-activity-id id="__42">ExecuteWithParams1</from-activity-id>
+      <control-flow-case id="__45">
+        <from-outcome id="__43">ExecuteWithParams</from-outcome>
+        <to-activity-id id="__44">empDashboard</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>

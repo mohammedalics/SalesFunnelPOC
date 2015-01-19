@@ -28,7 +28,12 @@
                 <af:panelGroupLayout layout="vertical" id="pgl2">
                   <af:commandLink text="#{node.EmpName}"
                                  styleClass="AFHVNodeTitleTextStyle" id="ot2"
-                                  inlineStyle="font-size:14px;color:#383A47;font-weight:bold;"/>
+                                  inlineStyle="font-size:14px;color:#383A47;font-weight:bold;"
+                                  action="dashboard">
+                    <af:setPropertyListener from="#{node.EmpId}"
+                                            to="#{pageFlowScope.empId}"
+                                            type="action"/>
+                  </af:commandLink>
                   <af:outputText value="#{node.EmpJobTitle}"
                                  id="ot1"
                                  inlineStyle="font-style:italic;font-size:12px;color:#383A47"/>

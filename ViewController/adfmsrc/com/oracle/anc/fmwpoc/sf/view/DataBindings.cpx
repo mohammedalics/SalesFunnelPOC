@@ -43,6 +43,8 @@
           usageId="com_oracle_anc_fmwpoc_sf_view_emp_funnel_btf_emp_funnel_btf_ExecuteWithParamsPageDef"/>
     <page path="/emp/hierarchFunnel.jsff"
           usageId="com_oracle_anc_fmwpoc_sf_view_hierarchFunnelPageDef"/>
+    <page path="/WEB-INF/emp-dashboard-btf.xml#emp-dashboard-btf@ExecuteWithParams1"
+          usageId="com_oracle_anc_fmwpoc_sf_view_emp_dashboard_btf_emp_dashboard_btf_ExecuteWithParams1PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_oracle_anc_fmwpoc_sf_view_mainPageDef"
@@ -81,6 +83,8 @@
           path="com.oracle.anc.fmwpoc.sf.view.pageDefs.emp_funnel_btf_emp_funnel_btf_ExecuteWithParamsPageDef"/>
     <page id="com_oracle_anc_fmwpoc_sf_view_hierarchFunnelPageDef"
           path="emp.hierarchFunnelPageDef"/>
+    <page id="com_oracle_anc_fmwpoc_sf_view_emp_dashboard_btf_emp_dashboard_btf_ExecuteWithParams1PageDef"
+          path="com.oracle.anc.fmwpoc.sf.view.pageDefs.emp_dashboard_btf_emp_dashboard_btf_ExecuteWithParams1PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="SalesFunnelModuleDataControl"

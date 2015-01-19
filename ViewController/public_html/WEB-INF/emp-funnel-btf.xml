@@ -15,11 +15,28 @@
     <view id="hierarchFunnel">
       <page>/emp/hierarchFunnel.jsff</page>
     </view>
+    <task-flow-call id="emp-dashboard-btf">
+      <task-flow-reference>
+        <document>/WEB-INF/emp-dashboard-btf.xml</document>
+        <id>emp-dashboard-btf</id>
+      </task-flow-reference>
+      <input-parameter id="__10">
+        <name>empId</name>
+        <value>#{pageFlowScope.empId}</value>
+      </input-parameter>
+    </task-flow-call>
     <control-flow-rule id="__5">
       <from-activity-id id="__6">ExecuteWithParams</from-activity-id>
       <control-flow-case id="__7">
         <from-outcome id="__8">ExecuteWithParams</from-outcome>
         <to-activity-id id="__9">hierarchFunnel</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__14">
+      <from-activity-id id="__15">hierarchFunnel</from-activity-id>
+      <control-flow-case id="__17">
+        <from-outcome id="__18">dashboard</from-outcome>
+        <to-activity-id id="__16">emp-dashboard-btf</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>

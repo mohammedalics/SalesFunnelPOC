@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93"
+                id="emp_dashboard_btf_emp_dashboard_btf_ExecuteWithParams1PageDef"
+                Package="com.oracle.anc.fmwpoc.sf.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="EmployeesView1" RangeSize="25"
+              DataControl="SalesFunnelModuleDataControl"
+              id="EmployeesView1Iterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="EmployeesView1Iterator" id="ExecuteWithParams"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="pEmpId" NDValue="#{pageFlowScope.empId}"
+                 NDType="oracle.jbo.domain.Number"/>
+    </action>
+  </bindings>
+</pageDefinition>
