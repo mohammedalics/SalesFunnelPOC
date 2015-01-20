@@ -50,6 +50,7 @@ import org.apache.myfaces.trinidad.render.CoreRenderer;
 public class FunnelBean {
     private UIGauge targetGauge;
     private UIGraph funnelGraph;
+    private UIGraph comboGraph;
 
     public FunnelBean() {
     }
@@ -288,6 +289,14 @@ new StringBuilder(context.getExternalContext().encodeResourceURL(url));
         return funnelGraph;
     }
 
+    public void setComboGraph(UIGraph comboGraph) {
+        this.comboGraph = comboGraph;
+    }
+
+    public UIGraph getComboGraph() {
+        return comboGraph;
+    }
+
     //helper class for saveAndRenderImage
 
     public static class SerializableByteArrayStream extends ByteArrayOutputStream implements Serializable {
@@ -319,6 +328,22 @@ new StringBuilder(context.getExternalContext().encodeResourceURL(url));
             url =
 saveAndRenderImage(false, FacesContext.getCurrentInstance(), getFunnelGraph().getImageView(),
                    getFunnelGraph(), null, "PNG", "GraphServlet");
+        } catch (IOException e) {
+        }
+        url = url.substring(url.indexOf("/", 1));
+        return url;
+    }
+
+    public synchronized String getComboChartImage() {
+        oracle.jbo.domain.Number empId =
+            (oracle.jbo.domain.Number)JSFUtils.resolveExpression("#{node.EmpId}");
+        executeWithParam("ExecuteQuarterReportWithParams", "pEmpId", empId);
+        getComboGraph().transferProperties();
+        String url = "";
+        try {
+            url =
+saveAndRenderImage(false, FacesContext.getCurrentInstance(), getComboGraph().getImageView(),
+                   getComboGraph(), null, "PNG", "GraphServlet");
         } catch (IOException e) {
         }
         url = url.substring(url.indexOf("/", 1));

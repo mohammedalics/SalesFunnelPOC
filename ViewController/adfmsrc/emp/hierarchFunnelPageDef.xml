@@ -13,6 +13,9 @@
     <iterator Binds="EmployeeFunnelView1" RangeSize="-1"
               DataControl="SalesFunnelModuleDataControl"
               id="EmployeeFunnelView1Iterator"/>
+    <iterator Binds="EmployeeQuarterReportView1" RangeSize="-1"
+              DataControl="SalesFunnelModuleDataControl"
+              id="EmployeeQuarterReportView1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="EmployeesView1Iterator" id="EmployeesView1">
@@ -67,6 +70,29 @@
     <action IterBinding="EmployeeFunnelView1Iterator"
             id="ExecuteFunnelWithParams"
             InstanceName="SalesFunnelModuleDataControl.EmployeeFunnelView1"
+            DataControl="SalesFunnelModuleDataControl"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="pEmpId" NDType="oracle.jbo.domain.Number"/>
+    </action>
+    <graph IterBinding="EmployeeQuarterReportView1Iterator"
+           id="EmployeeQuarterReportView1"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="COMBINATION_VERT_ABS">
+      <graphDataMap leafOnly="true">
+        <series>
+          <data>
+            <item value="ClosedAmount"/>
+            <item value="EmpQuarterlyTargetAmount"/>
+            <item value="ProbableAmount"/>
+          </data>
+        </series>
+        <groups>
+          <item value="Quarter"/>
+        </groups>
+      </graphDataMap>
+    </graph>
+    <action IterBinding="EmployeeQuarterReportView1Iterator"
+            id="ExecuteQuarterReportWithParams"
+            InstanceName="SalesFunnelModuleDataControl.EmployeeQuarterReportView1"
             DataControl="SalesFunnelModuleDataControl"
             RequiresUpdateModel="true" Action="executeWithParams">
       <NamedData NDName="pEmpId" NDType="oracle.jbo.domain.Number"/>

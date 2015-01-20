@@ -51,6 +51,11 @@
                             id="image1"
                             inlineStyle="width:200px;height:200px; vertical-align:middle; text-align:center;"/>
                 </af:showDetailItem>
+                <af:showDetailItem text="Quarter" id="sdi3" rendered="true">
+                  <af:image source="#{backingBeanScope.funnelBean.comboChartImage}"
+                            id="image2"
+                            inlineStyle="width:200px;height:200px; vertical-align:middle; text-align:center;"/>
+                </af:showDetailItem>
               </dvt:panelCard>
             </af:panelGroupLayout>
           </f:facet>
@@ -85,12 +90,29 @@
         <dvt:funnelGraph id="funnelGraph1"
                          value="#{bindings.EmployeeFunnelView1.graphModel}"
                          subType="FUNNEL"
-                         binding="#{backingBeanScope.funnelBean.funnelGraph}">
+                         binding="#{backingBeanScope.funnelBean.funnelGraph}"
+                         inlineStyle="inlineStyle=width:200px;height:200px;">
           <dvt:background>
             <dvt:specialEffects/>
           </dvt:background>
           <dvt:legendArea automaticPlacement="AP_NEVER"/>
         </dvt:funnelGraph>
+        <dvt:comboGraph id="comboGraph1"
+                        value="#{bindings.EmployeeQuarterReportView1.graphModel}"
+                        subType="COMBINATION_VERT_ABS"
+                        binding="#{backingBeanScope.funnelBean.comboGraph}"
+                        inlineStyle="inlineStyle=width:200px;height:200px;">
+          <dvt:background>
+            <dvt:specialEffects/>
+          </dvt:background>
+          <dvt:graphPlotArea/>
+          <dvt:seriesSet>
+            <dvt:series/>
+          </dvt:seriesSet>
+          <dvt:o1Axis/>
+          <dvt:y1Axis/>
+          <dvt:legendArea automaticPlacement="AP_NEVER"/>
+        </dvt:comboGraph>
       </af:panelGroupLayout>
     </f:facet>
   </af:decorativeBox>
