@@ -202,4 +202,12 @@ public class SalesFunnelModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getEmployeeNextQuarterReportView() {
         return (ViewObjectImpl)findViewObject("EmployeeNextQuarterReportView");
     }
+
+    /**
+     * Container's getter for EmployeeFunnelView1.
+     * @return EmployeeFunnelView1
+     */
+    public ViewObjectImpl getEmployeeFunnelView1() {
+        return (ViewObjectImpl)findViewObject("EmployeeFunnelView1");
+    }
 }

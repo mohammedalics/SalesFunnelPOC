@@ -13,7 +13,7 @@
                            inlineStyle="width:100%; height:600px;">
         <dvt:link linkType="orthogonalRounded" id="l1"/>
         <dvt:node type="com.oracle.anc.fmwpoc.sf.model.views.EmployeesView"
-                  width="233" height="233" id="n1">
+                  width="280" height="360" id="n1">
           <f:facet name="zoom100">
             <af:panelGroupLayout id="pgl3" layout="vertical"
                                  inlineStyle="width:100%; height:100px; padding:3px;">
@@ -39,11 +39,59 @@
                                  inlineStyle="font-style:italic;font-size:12px;color:#383A47"/>
                 </af:panelGroupLayout>
               </af:panelGroupLayout>
+              <af:spacer width="5" height="5" id="s2"/>
+              <dvt:panelCard id="pc1">
+                <af:showDetailItem text="Target" id="sdi1">
+                  <af:image source="#{backingBeanScope.funnelBean.targetGaugeImage}"
+                            id="i2"
+                            inlineStyle="width:200px;height:200px; vertical-align:middle; text-align:center;"/>
+                </af:showDetailItem>
+                <af:showDetailItem text="Funnel" id="sdi2">
+                  <af:image source="#{backingBeanScope.funnelBean.funnelChartImage}"
+                            id="image1"
+                            inlineStyle="width:200px;height:200px; vertical-align:middle; text-align:center;"/>
+                </af:showDetailItem>
+              </dvt:panelCard>
             </af:panelGroupLayout>
           </f:facet>
         </dvt:node>
       </dvt:hierarchyViewer>
     </f:facet>
-    <f:facet name="top"/>
+    <f:facet name="top">
+      <af:panelGroupLayout id="pgl5" rendered="false">
+        <dvt:gauge id="gauge1"
+                   value="#{bindings.EmpCurrentQuarterReportView.gaugeModel}"
+                   gaugeType="DIAL"
+                   binding="#{backingBeanScope.funnelBean.targetGauge}">
+          <dvt:gaugeBackground>
+            <dvt:specialEffects/>
+          </dvt:gaugeBackground>
+          <dvt:thresholdSet>
+            <dvt:threshold text="Low" fillColor="#d62800"/>
+            <dvt:threshold text="Medium" fillColor="#ffcf21"/>
+            <dvt:threshold fillColor="#00a500"/>
+            <dvt:threshold text="High" fillColor="#0000d6"/>
+          </dvt:thresholdSet>
+          <dvt:gaugeFrame/>
+          <dvt:indicator/>
+          <dvt:indicatorBase/>
+          <dvt:gaugePlotArea/>
+          <dvt:tickLabel/>
+          <dvt:tickMark/>
+          <dvt:topLabel/>
+          <dvt:bottomLabel/>
+          <dvt:metricLabel position="LP_WITH_BOTTOM_LABEL"/>
+        </dvt:gauge>
+        <dvt:funnelGraph id="funnelGraph1"
+                         value="#{bindings.EmployeeFunnelView1.graphModel}"
+                         subType="FUNNEL"
+                         binding="#{backingBeanScope.funnelBean.funnelGraph}">
+          <dvt:background>
+            <dvt:specialEffects/>
+          </dvt:background>
+          <dvt:legendArea automaticPlacement="AP_NEVER"/>
+        </dvt:funnelGraph>
+      </af:panelGroupLayout>
+    </f:facet>
   </af:decorativeBox>
 </jsp:root>

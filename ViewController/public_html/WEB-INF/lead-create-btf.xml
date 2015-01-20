@@ -50,7 +50,7 @@
         <to-activity-id id="__14">leadCreatCommit</to-activity-id>
       </control-flow-case>
       <control-flow-case id="__17">
-        <from-outcome id="__19">leadEditCommit</from-outcome>
+        <from-outcome id="__19">leadEditRollback</from-outcome>
         <to-activity-id id="__18">leadCreateRollback</to-activity-id>
       </control-flow-case>
     </control-flow-rule>

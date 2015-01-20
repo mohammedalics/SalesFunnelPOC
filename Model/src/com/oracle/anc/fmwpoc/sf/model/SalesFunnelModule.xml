@@ -70,6 +70,9 @@
       </PIMap>
     </ParameterMap>
   </ViewUsage>
+  <ViewUsage
+    Name="EmployeeFunnelView1"
+    ViewObjectName="com.oracle.anc.fmwpoc.sf.model.views.bi.EmployeeFunnelView"/>
   <ViewLinkUsage
     Name="ContactsContactsFk1Link1"
     ViewLinkObjectName="com.oracle.anc.fmwpoc.sf.model.views.ContactsContactsFk1Link"

@@ -7,10 +7,17 @@
     <iterator Binds="EmployeesView1" RangeSize="25"
               DataControl="SalesFunnelModuleDataControl"
               id="EmployeesView1Iterator"/>
+    <iterator Binds="EmpCurrentQuarterReportView" RangeSize="2"
+              DataControl="SalesFunnelModuleDataControl"
+              id="EmpCurrentQuarterReportViewIterator"/>
+    <iterator Binds="EmployeeFunnelView1" RangeSize="-1"
+              DataControl="SalesFunnelModuleDataControl"
+              id="EmployeeFunnelView1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="EmployeesView1Iterator" id="EmployeesView1">
-      <nodeDefinition DefName="com.oracle.anc.fmwpoc.sf.model.views.EmployeesView">
+      <nodeDefinition DefName="com.oracle.anc.fmwpoc.sf.model.views.EmployeesView"
+                      Name="EmployeesView10">
         <AttrNames>
           <Item Value="EmpName"/>
           <Item Value="EmpJobTitle"/>
@@ -21,5 +28,48 @@
         </Accessors>
       </nodeDefinition>
     </tree>
+    <gauge IterBinding="EmpCurrentQuarterReportViewIterator"
+           id="EmpCurrentQuarterReportView"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="DIAL">
+      <gaugeDataMap>
+        <thresholds>
+          <item value="LowTarget"/>
+          <item value="MediumTarget"/>
+          <item value="EmpQuarterlyTargetAmount"/>
+        </thresholds>
+        <item type="metric" value="ClosedAmount"/>
+        <item type="minimum" value="0" valueType="literal"/>
+        <item type="maximum" value="MaxTarget"/>
+      </gaugeDataMap>
+    </gauge>
+    <action IterBinding="EmpCurrentQuarterReportViewIterator"
+            id="ExecuteTargetWithParams"
+            InstanceName="SalesFunnelModuleDataControl.EmpCurrentQuarterReportView"
+            DataControl="SalesFunnelModuleDataControl"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="pEmpId" NDType="oracle.jbo.domain.Number"/>
+      <NamedData NDName="pQuarter" NDType="java.lang.String"/>
+    </action>
+    <graph IterBinding="EmployeeFunnelView1Iterator" id="EmployeeFunnelView1"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="FUNNEL">
+      <graphDataMap leafOnly="true">
+        <series>
+          <data>
+            <item value="ProbableAmount"/>
+            <item value="StageTarget"/>
+          </data>
+        </series>
+        <groups>
+          <item value="Stage"/>
+        </groups>
+      </graphDataMap>
+    </graph>
+    <action IterBinding="EmployeeFunnelView1Iterator"
+            id="ExecuteFunnelWithParams"
+            InstanceName="SalesFunnelModuleDataControl.EmployeeFunnelView1"
+            DataControl="SalesFunnelModuleDataControl"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="pEmpId" NDType="oracle.jbo.domain.Number"/>
+    </action>
   </bindings>
 </pageDefinition>

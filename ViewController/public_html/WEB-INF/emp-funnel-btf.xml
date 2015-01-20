@@ -6,6 +6,11 @@
       <id id="__2">sf-btf-template</id>
     </template-reference>
     <default-activity id="__3">ExecuteWithParams</default-activity>
+    <managed-bean id="__13">
+      <managed-bean-name id="__19">funnelBean</managed-bean-name>
+      <managed-bean-class id="__12">com.oracle.anc.fmwpoc.sf.view.beans.FunnelBean</managed-bean-class>
+      <managed-bean-scope id="__11">backingBean</managed-bean-scope>
+    </managed-bean>
     <method-call id="ExecuteWithParams">
       <method>#{bindings.ExecuteWithParams.execute}</method>
       <outcome id="__4">

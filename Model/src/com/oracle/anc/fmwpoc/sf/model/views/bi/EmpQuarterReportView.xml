@@ -113,7 +113,7 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="VIEW_ATTR"
-    SQLType="VARCHAR"
+    SQLType="NUMERIC"
     IsQueriable="false">
     <TransientExpression><![CDATA[(EmpQuarterlyTargetAmount != null ? EmpQuarterlyTargetAmount : 0)*0.5]]></TransientExpression>
   </ViewAttribute>
@@ -126,7 +126,7 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="VIEW_ATTR"
-    SQLType="VARCHAR"
+    SQLType="NUMERIC"
     IsQueriable="false">
     <TransientExpression><![CDATA[(EmpQuarterlyTargetAmount != null ? EmpQuarterlyTargetAmount:0)*0.75]]></TransientExpression>
   </ViewAttribute>
@@ -139,7 +139,7 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="VIEW_ATTR"
-    SQLType="NCLOB"
+    SQLType="NUMERIC"
     IsQueriable="false">
     <TransientExpression><![CDATA[ClosedAmount > EmpQuarterlyTargetAmount ? ClosedAmount : EmpQuarterlyTargetAmount]]></TransientExpression>
   </ViewAttribute>
@@ -181,6 +181,9 @@
         Required="Required"/>
     </ViewCriteriaRow>
   </ViewCriteria>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="EmpId"/>
+  </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.oracle.anc.fmwpoc.sf.model.ModelBundle"/>

@@ -90,7 +90,7 @@
       from="TaskFlowCall3"
       to="TaskFlowReturn6">
       <property
-         name="fromOutcome">leadEditCommit</property>
+         name="fromOutcome">leadEditRollback</property>
       <property
          name="sdm:polyPoints">R54,413.89258,231.04004,542.0,328.1953,L50</property>
    </ControlFlowCase>
